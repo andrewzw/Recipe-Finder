@@ -1,13 +1,13 @@
 
 <template>
-  <div class="container">
-    <h1 class="text-center my-4">Recipe Finder</h1>
+  <div class="container mt-5">
+    <h2 class="text-center my-3">Recipe Finder</h2>
     <div class="mb-4 row justify-content-center">
       <div class="col-lg-6 col-md-8 col-sm-10">
         <div class="search-box">
-          <input type="text" class="form-control rounded-pill" placeholder="Search for recipes" v-model="searchQuery" />
+          <input type="text" class="form-control rounded-pill " placeholder="Search for recipes" v-model="searchQuery" />
 
-          <button class="btn btn-primary rounded-pill mt-2" @click="searchRecipes">
+          <button type="submit" class="btn btn-primary rounded-pill " @click="searchRecipes">
             Search
           </button>
 
@@ -43,12 +43,12 @@
 
           </div>
         </div>
-      
+
 
       </div>
     </div>
 
-    
+
   </div>
 </template>
 
@@ -136,36 +136,42 @@ export default {
   width: 550px;
   margin: auto;
   padding: 10px 10px 10px 40px;
+
 }
 
 .search-box input {
+  background-color: #fff6e4;
   border: none;
   font-size: 16px;
   outline: none;
   width: 100%;
+  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.3);
 }
 
 .search-box button {
+  background-color: #D4A373;
+  border: 0;
   margin-left: 10px;
+  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.3);
 }
 
 @media (max-width: 768px) {
-.search-box {
-width: 100%;
-padding: 10px;
-}
+  .search-box {
+    width: 100%;
+    padding: 10px;
+  }
 
-.search-box input {
-font-size: 14px;
-}
+  .search-box input {
+    font-size: 14px;
+  }
 
-.row {
-margin: 0 -10px;
-}
+  .row {
+    margin: 0 -10px;
+  }
 
-.col-md-4 {
-padding: 10px;
-}
+  .col-md-4 {
+    padding: 10px;
+  }
 }
 
 @media (max-width: 820px) {
@@ -186,5 +192,4 @@ padding: 10px;
     padding: 10px;
   }
 }
-
 </style>

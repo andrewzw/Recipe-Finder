@@ -1,17 +1,17 @@
 <template>
-  <div class="container">
+  <div id="recipe-cuisine" class="container ">
     <div class="row">
-      <h2 class="mt-5 text-center">{{ selectedCuisine ? 'Top 3 ' + selectedCuisine.name + ' Dishes' : "Mama's Cuisine Recipes" }}</h2>
+      <h2 class="mt-5 text-center ">{{ selectedCuisine ? 'Top 3 ' + selectedCuisine.name + ' Dishes' : "Mama's Cuisine Recipes" }}</h2>
 
       <p class="text-center">{{ !selectedCuisine ? 'Click on a cuisine to see the top 3 recipes' : `Here are the top 3 recipes of the ${selectedCuisine.name} cuisine!` }}</p>
 
       <div class="row" v-if="!selectedCuisine">
         <div class="col-md-4" v-for="(cuisine, index) in cuisines" :key="index">
-          <router-link :to="'/top3-recipes/'">
+
             <div class="my-3 d-flex justify-content-center align-items-center">
               <CuisineCard :cuisine="cuisine" @card-clicked="onCardClicked" />
             </div>
-          </router-link>
+
         </div>
       </div>
 
@@ -47,10 +47,7 @@ export default {
       this.selectedCuisine = cuisine;
       this.showTopRecipes = true;
       console.log('Card Clicked', cuisine)
-      this.$router.push({
-        name: 'TopRecipes',
-        params: { cuisine: cuisine.name },
-      });
+
     },
 
     goBack() {

@@ -1,24 +1,8 @@
 <template>
   <div id="app">
-    <header class="mb-3 py-2 bg-primary text-white">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h1><i class="fas fa-utensils"></i> Mama's Recipe </h1>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <div class="container">
-        <div class="row">
-          <PageHeader></PageHeader>
-          <RecipeCuisine></RecipeCuisine>
-          <RecipeSearch></RecipeSearch>
-        </div>
-      </div>
-    </main>
+    
+    <Navbar />
+    <router-view></router-view>
 
     <footer class="py-3 bg-primary text-white mt-4">
       <div class="container">
@@ -30,9 +14,7 @@
 </template>
 
 <script>
-import PageHeader from "./components/PageHeader.vue";
-import RecipeSearch from "./components/RecipeSearch.vue";
-import RecipeCuisine from "./components/Cuisine/RecipeCuisine.vue";
+import Navbar from "./components/NavBar.vue";
 import router from '../router/index.js';
 
 export default {
@@ -40,9 +22,8 @@ export default {
   router,
 
   components: {
-    PageHeader,
-    RecipeSearch,
-    RecipeCuisine,
+
+    Navbar,
   },
   data() {
     return {
@@ -59,6 +40,7 @@ export default {
 <style scoped>
 #app {
   background-color: #ffecc5;
+  color: #362F2F;
 }
 
 h1,
