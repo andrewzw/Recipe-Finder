@@ -1,38 +1,32 @@
 <template>
-    <div class="navbar">
-      <header class="text-white">
-        <div class="container d-flex justify-content-center align-items-center">
-          <router-link to="/home">
-            <img :src="logo" alt="Logo" class="logo" />
-          </router-link>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <router-link to="/home" class="navbar-brand d-flex align-items-center">
+          <img :src="logo" alt="Logo" class="logo d-none d-lg-inline" />
           <h1><i class="fas fa-utensils"></i> Mama's Recipe</h1>
-        </div>
-      </header>
+        </router-link>
   
-      <nav>
-        <div class="container">
-          <ul class="nav justify-content-center">
-            <li class="nav-item">
-              <router-link to="/home" class="nav-link"><strong>Home</strong></router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/recipe-search" class="nav-link"><strong>Search Recipes</strong></router-link>
-            </li>
+  
+        <div class="justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+                <li class="nav-item">
+                <router-link to="/home" class="nav-link"><strong>Home</strong></router-link>
+                </li>
+                <li class="nav-item">
+                <router-link to="/recipe-search" class="nav-link"><strong>Search Recipes</strong></router-link>
+                </li>
           </ul>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </template>
   
-  
-
-<style scoped>
+  <style scoped>
 .logo {
-  height: 80%;
+  height: 50px;
   width: auto;
   object-fit: contain;
   margin-right: 10px;
-  margin-top: 0;
 }
 
 .navbar {
@@ -41,9 +35,6 @@
   z-index: 100;
   background-color: #b9c29e;
   width: 100%;
-  height: 70px;
-  display: flex;
-  align-items: center;
 }
 
 nav a {
@@ -56,24 +47,31 @@ nav a:hover {
   color: #362f2f;
 }
 
-.router-link-exact-active {
+.navbar-brand.router-link-exact-active {
+  color: white;
+}
+
+.navbar-brand.router-link-exact-active h1 {
+  text-shadow: none;
+}
+
+.router-link-exact-active:not(.navbar-brand) {
   color: #ffddb5;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
 </style>
 
-<script>
-import logo from '@/assets/logo.png';
-
-export default {
-  name: "AppNavbar",
-  data() {
-    return {
-      logo,
-    };
-  },
-};
-</script>
   
+  <script>
+  import logo from '@/assets/logo.png';
 
+  export default {
+    name: "AppNavbar",
+    data() {
+      return {
+        logo,
+      };
+    },
+  };
+  </script>
   
