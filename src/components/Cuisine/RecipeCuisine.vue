@@ -11,7 +11,8 @@
           <CuisineCard :cuisine="cuisine" @card-clicked="onCardClicked" />
         </div>
       </div>
-      <TopRecipes v-if="selectedCuisine" :selected-cuisine="selectedCuisine" />
+      <!-- <TopRecipes v-if="selectedCuisine" :selected-cuisine="selectedCuisine" /> -->
+      <TopRecipes v-if="showTopRecipes" :selected-cuisine="selectedCuisine" @go-back="goBack" />
     </div>
   </div>
 </template>
@@ -32,13 +33,26 @@ export default {
     return {
       cuisines: cuisine_data,
       selectedCuisine: null,
+      showTopRecipes: false,
     };
   },
+  
   methods: {
     onCardClicked(cuisine) {
       this.selectedCuisine = cuisine;
+      this.showTopRecipes = true;
       console.log('Card Clicked', cuisine)
+      this.$router.push({
+        name: 'TopRecipes',
+        params: { cuisine: cuisine.name },
+      });
     },
+
+    goBack() {
+      this.selectedCuisine = null;
+      this.showTopRecipes = false;
+    },
+
   },
 };
 </script>

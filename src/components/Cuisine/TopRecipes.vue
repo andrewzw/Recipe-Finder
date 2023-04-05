@@ -1,6 +1,7 @@
 <template>
   <div>
     <div v-if="selectedCuisine">
+      <button @click="goBack">Go Back to Cuisine Selection</button>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
         <!-- loops through the filteredDishes array and displays the name, image, description, ingredients, and instructions -->
@@ -53,6 +54,12 @@ export default {
 
       const filtered = top3.find((cuisine) => cuisine.name === this.selectedCuisine.name)?.dishes; //finds the cuisine with the same name as the selected cuisine and returns the dishes array
       return filtered ? filtered : []; //returns empty array if filtered is undefined
+    },
+  },
+
+  methods: {
+    goBack() {
+      this.$emit('go-back');
     },
   },
 };

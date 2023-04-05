@@ -15,7 +15,7 @@ const routes = [
     component: RecipeSearch,
   },
   {
-    path: '/top-recipes/:cuisine',
+    path: '/top3-recipes/:cuisine',
     name: 'TopRecipes',
     component: TopRecipes,
     props: true,
