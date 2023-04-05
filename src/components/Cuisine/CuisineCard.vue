@@ -1,19 +1,3 @@
-<!-- <template>
-    <router-link :to="'/cuisine/' + cuisine.name">
-        <div class="card h-100 position-relative" @click="$emit('card-clicked', cuisine.name)">
-            <img :src="cuisine.image" class="card-img-top" :alt="cuisine.name" />
-
-            <div
-                class="card-img-overlay d-flex align-items-center justify-content-center position-absolute top-0 start-0 w-100 h-100">
-                <div>
-                    <h5 class="card-title text-white text-center">{{ cuisine.name }}</h5>
-                    <p class="card-text text-white text-center">{{ cuisine.desc }}</p>
-                </div>
-            </div>
-        </div>
-    </router-link>
-</template> -->
-
 <template>
     <div v-if="cuisine" class="imgbox card h-100 position-relative" @click="$emit('card-clicked', cuisine)">
       <img :src="cuisine.image" class="card-img-top" :alt="cuisine.name" />

@@ -2,7 +2,11 @@
   <div id="app">
     <header class="py-4 bg-primary text-white">
       <div class="container">
-        <h1 class="text-center">Playful & Casual Homepage</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <h1><i class="fas fa-utensils"></i> Mama's Recipe Cuisine</h1>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -11,9 +15,9 @@
         <div class="row">
           <PageHeader></PageHeader>
           <RecipeSearch></RecipeSearch>
-          <RecipeCuisine @top-recipes-fetched="updateTopRecipes"></RecipeCuisine>
+          <RecipeCuisine></RecipeCuisine>
+          
         </div>
-        <TopRecipes v-if="topRecipes" :cuisine="selectedCuisine" :recipes="topRecipes" />
       </div>
     </main>
 
@@ -30,26 +34,24 @@
 import PageHeader from "./components/PageHeader.vue";
 import RecipeSearch from "./components/RecipeSearch.vue";
 import RecipeCuisine from "./components/Cuisine/RecipeCuisine.vue";
-import TopRecipes from './components/Cuisine/TopRecipes.vue';
+import router from './router.js';
 
 export default {
+  name: 'MamaRecipe',
+  router,
+
   components: {
     PageHeader,
     RecipeSearch,
     RecipeCuisine,
-    TopRecipes
   },
   data() {
     return {
-      selectedCuisine: null,
-      topRecipes: null,
+
     };
   },
   methods: {
-    updateTopRecipes(cuisine, recipes) {
-      this.selectedCuisine = cuisine;
-      this.topRecipes = recipes;
-    },
+
   },
 };
 </script>
