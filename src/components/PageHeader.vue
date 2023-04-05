@@ -1,3 +1,6 @@
+<!-- npm install -S vue-carousell -->
+
+
 <template>
 
 
@@ -18,6 +21,7 @@
 
   
 <script>
+
 export default {
   data() {
     return {

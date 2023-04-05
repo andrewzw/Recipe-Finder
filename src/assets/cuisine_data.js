@@ -33,7 +33,7 @@ export const cuisines = [
         id: 6,
         name: "Thai",
         desc: "A mix of spicy, sour, sweet, and salty flavors with a focus on fresh herbs and spices.",
-        image: "https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        image: "https://images.unsplash.com/photo-1562565652-a0d8f0c59eb4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
     },
     {
         id: 7,

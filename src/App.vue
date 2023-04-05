@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <header class="py-4 bg-primary text-white">
+    <header class="mb-3 py-2 bg-primary text-white">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h1><i class="fas fa-utensils"></i> Mama's Recipe Cuisine</h1>
+            <h1><i class="fas fa-utensils"></i> Mama's Recipe </h1>
           </div>
         </div>
       </div>
@@ -14,9 +14,8 @@
       <div class="container">
         <div class="row">
           <PageHeader></PageHeader>
-          <RecipeSearch></RecipeSearch>
           <RecipeCuisine></RecipeCuisine>
-          
+          <RecipeSearch></RecipeSearch>
         </div>
       </div>
     </main>
@@ -34,7 +33,7 @@
 import PageHeader from "./components/PageHeader.vue";
 import RecipeSearch from "./components/RecipeSearch.vue";
 import RecipeCuisine from "./components/Cuisine/RecipeCuisine.vue";
-import router from './router.js';
+import router from '../router/index.js';
 
 export default {
   name: 'MamaRecipe',
