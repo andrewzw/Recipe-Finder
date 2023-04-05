@@ -1,19 +1,25 @@
+
 <template>
   <div class="container">
     <h1 class="text-center my-4">Recipe Finder</h1>
-    <div class="mb-4">
-      <div class="search-box">
-        <input type="text" class="form-control rounded-pill" placeholder="Search for recipes" v-model="searchQuery" />
-        <button class="btn btn-primary mt-2" @click="searchRecipes">
-          Search
-        </button>
+    <div class="mb-4 row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-sm-10">
+        <div class="search-box">
+          <input type="text" class="form-control rounded-pill" placeholder="Search for recipes" v-model="searchQuery" />
+
+          <button class="btn btn-primary rounded-pill mt-2" @click="searchRecipes">
+            Search
+          </button>
+
+        </div>
       </div>
     </div>
 
 
     <!-- Displays recipe -->
-    <div class="row">
-      <div class="col-md-4 mb-4" v-for="recipe in recipes" :key="recipe.id">
+    <div class="row justify-content-center">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4" v-for="recipe in recipes" :key="recipe.id">
+
         <div class="card">
           <img :src="recipe.image" class="card-img-top" alt="Recipe image" />
           <div class="card-body">
@@ -37,9 +43,12 @@
 
           </div>
         </div>
+      
+
       </div>
     </div>
 
+    
   </div>
 </template>
 
@@ -61,8 +70,8 @@ export default {
       if (!this.searchQuery.trim()) {
         return;
       }
-
-      const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
+      // const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
+      const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${this.searchQuery}&number=20`;
 
 
@@ -79,14 +88,15 @@ export default {
     },
 
     async getIngredients(id) {
-      const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
+      // const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
+      const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`;
 
       try {
-        const response = await axios.get(apiUrl);
-        const recipe = this.recipes.find(r => r.id === id);
-        recipe.ingredients = response.data.extendedIngredients;
-        recipe.steps = response.data.analyzedInstructions[0].steps;
+        const response = await axios.get(apiUrl); // Get recipe details
+        const recipe = this.recipes.find(r => r.id === id); // Find recipe in recipes array
+        recipe.ingredients = response.data.extendedIngredients; // Add ingredients to recipe
+        recipe.steps = response.data.analyzedInstructions[0].steps; // Add steps to recipe
 
       } catch (error) {
         console.error('Failed to fetch ingredients:', error);
@@ -101,6 +111,25 @@ export default {
 </script>
 
 <style scoped>
+.card {
+  border: none;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.card-title {
+  font-size: 1.2rem;
+}
+
+.btn-primary {
+  border-radius: 0;
+}
+
 .search-box {
   display: flex;
   align-items: center;
@@ -120,6 +149,42 @@ export default {
   margin-left: 10px;
 }
 
+@media (max-width: 768px) {
+.search-box {
+width: 100%;
+padding: 10px;
+}
 
+.search-box input {
+font-size: 14px;
+}
+
+.row {
+margin: 0 -10px;
+}
+
+.col-md-4 {
+padding: 10px;
+}
+}
+
+@media (max-width: 820px) {
+  .search-box {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .search-box input {
+    font-size: 14px;
+  }
+
+  .row {
+    margin: 0 -10px;
+  }
+
+  .col-md-4 {
+    padding: 10px;
+  }
+}
 
 </style>
