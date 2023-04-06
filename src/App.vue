@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-    
-    <Navbar />
+    <NavBar></NavBar>
     <router-view></router-view>
 
-    <footer class="py-3 bg-primary text-white mt-4">
+    <footer class="py-2 bg-white text-black mt-4">
       <div class="container">
-        <p class="text-center mb-0">Copyright &copy; 2023 - Playful & Casual</p>
+        <p class="text-center mb-0"><i>Website made by Yap Zhe Wei 103508895</i></p>
       </div>
     </footer>
 
@@ -14,7 +13,7 @@
 </template>
 
 <script>
-import Navbar from "./components/NavBar.vue";
+import NavBar from './components/NavBar.vue';
 import router from '../router/index.js';
 
 export default {
@@ -22,8 +21,7 @@ export default {
   router,
 
   components: {
-
-    Navbar,
+    NavBar,
   },
   data() {
     return {
@@ -37,10 +35,11 @@ export default {
 </script>
 
 
-<style scoped>
+<style>
 #app {
   background-color: #ffecc5;
   color: #362F2F;
+
 }
 
 h1,

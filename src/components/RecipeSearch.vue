@@ -1,6 +1,6 @@
 
 <template>
-  <div class="container mt-5">
+  <div class="container-fluid mt-5 pt-3">
     <h2 class="text-center my-3">Recipe Finder</h2>
     <div class="mb-4 row justify-content-center">
       <div class="col-lg-6 col-md-8 col-sm-10">
@@ -17,10 +17,10 @@
 
 
     <!-- Displays recipe -->
-    <div class="row justify-content-center">
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4" v-for="recipe in recipes" :key="recipe.id">
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4 " v-for="recipe in recipes" :key="recipe.id">
 
-        <div class="card">
+        <div class="card pb-0">
           <img :src="recipe.image" class="card-img-top" alt="Recipe image" />
           <div class="card-body">
             <h5 class="card-title">{{ recipe.title }}</h5>
@@ -70,8 +70,8 @@ export default {
       if (!this.searchQuery.trim()) {
         return;
       }
-      // const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
-      const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
+     const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
+      // const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${this.searchQuery}&number=20`;
 
 
@@ -88,8 +88,8 @@ export default {
     },
 
     async getIngredients(id) {
-      // const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
-      const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
+      const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
+      // const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`;
 
       try {
@@ -111,6 +111,9 @@ export default {
 </script>
 
 <style scoped>
+.container-fluid {
+  height: fit-content;
+}
 .card {
   border: none;
   margin-bottom: 2rem;

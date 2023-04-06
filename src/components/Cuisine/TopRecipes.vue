@@ -3,7 +3,7 @@
     <div v-if="selectedCuisine">
 
       <router-link class="btn mt-3 rounded-pill border border-dark custom-btn" style="border-color: black;" @click="goBack"
-        :to="{ path: '/home', hash: '#recipe-cuisine' }">
+        :to="{ path: '/recipe-cuisine/' }">
         <i class="gg-arrow-left-o"></i>
       </router-link>
 

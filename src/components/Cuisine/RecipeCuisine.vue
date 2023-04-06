@@ -1,5 +1,5 @@
 <template>
-  <div id="recipe-cuisine" class="container ">
+  <div id="recipe-cuisine" class="container mt-5">
     <div class="row">
       <h2 class="mt-5 text-center ">{{ selectedCuisine ? 'Top 3 ' + selectedCuisine.name + ' Dishes' : "Mama's Cuisine Recipes" }}</h2>
 

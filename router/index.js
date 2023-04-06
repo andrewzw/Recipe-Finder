@@ -1,13 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import RecipeSearch from '../src/components/RecipeSearch.vue';
-import PageHeader from '../src/components/PageHeader.vue';
-import TopRecipes from '../src/components/Cuisine/TopRecipes.vue';
-
+import HomePage from '../src/components/HomePage.vue';
+import RecipeCuisine from '../src/components/Cuisine/RecipeCuisine.vue';
 const routes = [
   {
-    path: '/home',
+    path: '/',
     name: 'Home',
-    component: PageHeader,
+    component: HomePage,
   },
   {
     path: '/recipe-search',
@@ -15,9 +14,9 @@ const routes = [
     component: RecipeSearch,
   },
   {
-    path: '/top3-recipes/:cuisine?',
+    path: '/recipe-cuisine/:cuisine?',
     name: 'TopRecipes',
-    component: TopRecipes,
+    component: RecipeCuisine,
     props: true,
   },
   
