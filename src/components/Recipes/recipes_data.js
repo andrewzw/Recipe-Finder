@@ -5,6 +5,7 @@ const defaultRecipes = [
       slug: 'katsu-curry',
       title: 'Katsu Curry',
       description: 'A delicious curry made with chicken, potatoes, and a special sauce',
+      image: 'https://thewoksoflife.com/wp-content/uploads/2022/03/chicken-katsu-curry-rice-15.jpg',
       ingredients: [
         '1 tablespoon olive oil',
         '1 onion, chopped',
@@ -22,6 +23,7 @@ const defaultRecipes = [
       slug: 'ramen-noodle-soup',
       title: 'Ramen noodle soup',
       description: 'A delicious curry made with chicken, potatoes, and a special sauce',
+      image: 'https://showmetheyummy.com/wp-content/uploads/2017/09/Slow-Cooker-Ramen-Noodles-Show-Me-the-Yummy-6@2x.jpg',
       ingredients: [
         '1 tablespoon olive oil',
         '1 onion, chopped',

@@ -6,13 +6,17 @@
 
     <div class="recipes">
       <div class="card" v-for="recipe in $store.state.recipes" :key="recipe.slug">
+        <img :src="recipe.image" alt="Recipe image" class="recipe-image" >
+
         <h2>{{ recipe.title }}</h2>
         <p>{{ recipe.description }}</p>
-        <router-link :to="`/my-recipes/${recipe.slug}`">
-          <button class="viewButton">View Recipe</button>
-          <button class="deleteButton" @click.prevent="deleteRecipe(recipe.slug)">Delete Recipe</button>
-        </router-link>
 
+        <div>
+          <router-link class="viewButton" :to="`/my-recipes/${recipe.slug}`">
+          View Recipe
+        </router-link>
+        <button class="deleteButton" @click.prevent="deleteRecipe(recipe.slug)">Delete Recipe</button>
+        </div>
 
       </div>
     </div>
@@ -31,6 +35,12 @@
             <textarea v-model="newRecipe.description"></textarea>
           </div>
 
+
+          <div class="group">
+            <label>Image Link</label>
+            <input type="text" v-model="newRecipe.image" />
+          </div>
+
           <div class="group">
             <label>Ingredients</label>
             <div class="ingredient" v-for="i in newRecipe.ingredientRows" :key="i">
@@ -41,8 +51,8 @@
 
           <div class="group">
             <label>Instructions</label>
-            <div class="method" v-for="i in newRecipe.methodRows" :key="i">
-              <textarea v-model="newRecipe.method[i - 1]"></textarea>
+            <div class="instructions" v-for="i in newRecipe.instructionsRows" :key="i">
+              <textarea v-model="newRecipe.instructions[i - 1]"></textarea>
             </div>
             <button type="button" @click="addNewStep">Add step</button>
           </div>
@@ -60,7 +70,7 @@
 <script>
 
 import { ref } from 'vue'; //composition API
-import { useStore } from 'vuex'; 
+import { useStore } from 'vuex';
 export default {
   name: 'MyRecipes',
   setup() {
@@ -68,9 +78,9 @@ export default {
       title: '',
       description: '',
       ingredients: [],
-      method: [],
+      instructions: [],
       ingredientRows: 1,
-      methodRows: 1
+      instructionsRows: 1
     });
     const popupOpen = ref(false);
     const store = useStore();
@@ -83,7 +93,7 @@ export default {
     }
 
     const addNewStep = () => {
-      newRecipe.value.methodRows++;
+      newRecipe.value.instructionsRows++;
     }
 
     const addNewRecipe = () => {
@@ -92,17 +102,18 @@ export default {
         alert("Please enter a title");
         return;
       }
-      store.commit('ADD_RECIPE', { ...newRecipe.value });
+      store.commit('ADD_RECIPE', { ...newRecipe.value, image: newRecipe.value.image || 'https://via.placeholder.com/300' });
       newRecipe.value = {
         title: '',
         description: '',
+        image: '',
         ingredients: [],
-        method: [],
+        instructions: [],
         ingredientRows: 1,
-        methodRows: 1
+        instructionsRows: 1
       };
       togglePopup();
-    }
+    };
 
     const deleteRecipe = (slug) => {
       if (confirm('Are you sure you want to delete this recipe?')) {
@@ -123,6 +134,30 @@ export default {
 </script>
 
 <style>
+.recipes .card {
+  border: 3px solid #f5f5f5;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem;
+  background-color: #081c337e;
+  border-radius: 10px;
+  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: left; 
+  max-width: 400px; /* Updated property */
+  justify-content: space-between; /* Added property */
+}
+
+
+.recipes .card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  max-height: 100%;
+}
+
 .home {
   color: #ffecc5;
   padding: 1rem;
@@ -131,14 +166,15 @@ export default {
   align-items: center;
 }
 
-.home h2 ,p{
+.home h2,
+p {
   color: #000000;
 }
 
 .card h2 {
   color: #fff;
   font-size: 3rem;
-  margin-bottom: 32px;
+  margin-bottom: 1rem;
 }
 
 .card p {
@@ -148,8 +184,7 @@ export default {
 .recipes {
   display: grid;
   margin-bottom: 60vh;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
+  grid-template-columns: repeat(3, 1fr);}
 
 .recipes .card {
   border: 3px solid #f5f5f5;
@@ -163,10 +198,6 @@ export default {
 
 }
 
-.recipes .card:hover {
-  box-shadow: 5px 10px 10px rgba(240, 240, 240, 0.6);
-
-}
 
 .recipes .card h2 {
   font-size: 2rem;
@@ -197,10 +228,12 @@ export default {
   border-radius: 1rem;
   width: 100%;
   max-width: 768px;
+  overflow-y: auto;
+  max-height: 90%;
 }
 
-.popupContent h2{
-color: #fff;
+.popupContent h2 {
+  color: #fff;
 }
 
 .popupContent h2 {
@@ -244,6 +277,8 @@ color: #fff;
   border-radius: 5px;
   cursor: pointer;
   margin-right: 10px;
+  text-decoration: none; 
+  text-align: center;
 }
 
 .deleteButton {
@@ -268,6 +303,18 @@ color: #fff;
 
 .addButton:hover {
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+}
 
+
+.viewButton:hover {
+  color: #fff;
+  text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.8);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.deleteButton:hover {
+  color: #000000;
+  text-shadow: 2px 3px 6px rgba(255, 255, 255, 0.8);
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
 }
 </style>

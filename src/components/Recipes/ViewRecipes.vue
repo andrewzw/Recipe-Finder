@@ -1,8 +1,8 @@
 <template>
-	<div class="recipe mt-5">
-		<router-link to="/my-recipes"><i class="gg-arrow-left-o"></i></router-link>
-		
-		<h2>{{ recipe.title }}</h2>
+	<div class="recipe mt-5 pt-5">
+		<router-link to="/my-recipes"><i class="gg-arrow-left-o"></i></router-link> <!-- back to my recipes -->
+
+		<h2>{{ recipe.title }} </h2>
 		<p class="desc">{{ recipe.description }}</p>
 		<hr />
 		<div class="ingredients">
@@ -13,7 +13,7 @@
 				</li>
 			</ul>
 		</div>
-		<div class="method">
+		<div class="instructions">
 			<h3>Instructions</h3>
 			<ol>
 				<li v-for="(step, i) in recipe.instructions" :key="i">
@@ -78,7 +78,7 @@ h3 {
 	margin-bottom: 1rem;
 }
 
-.method ol li {
+.instructions ol li {
 	margin-bottom: 1rem;
 	padding-bottom: 0.5rem;
 	list-style-position: inside;
