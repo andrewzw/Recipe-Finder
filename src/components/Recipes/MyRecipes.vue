@@ -2,63 +2,88 @@
   <div class="container home mt-5 pt-5">
     <h2>My Recipes</h2>
     <p>Make and upload your own recipes</p>
-    <button class="addButton" @click="togglePopup">Add new Recipe</button>
+    <button class="addButton" @click="togglePopup">
+      <i class="gg-add addIcon"></i>
+      <span>Add new Recipe</span>
+    </button>
+
 
     <div class="recipes">
       <div class="card" v-for="recipe in $store.state.recipes" :key="recipe.slug">
-        <img :src="recipe.image" alt="Recipe image" class="recipe-image" >
+        <img :src="recipe.image" alt="Recipe image" class="recipe-image">
 
         <h2>{{ recipe.title }}</h2>
         <p>{{ recipe.description }}</p>
 
         <div>
           <router-link class="viewButton" :to="`/my-recipes/${recipe.slug}`">
-          View Recipe
-        </router-link>
-        <button class="deleteButton" @click.prevent="deleteRecipe(recipe.slug)">Delete Recipe</button>
+            View Recipe
+          </router-link>
+          <button type="button" class="deleteButton" @click.prevent="deleteRecipe(recipe.slug)">Delete Recipe</button>
         </div>
 
       </div>
     </div>
 
     <div class="recipePopup" v-if="popupOpen">
-      <div class="popupContent">
+      <div class="popupContent mt-5">
         <h2>Add new recipe</h2>
         <form @submit.prevent="addNewRecipe"> <!-- prevent submit if form is not filled-->
           <div class="group">
-            <label>Title</label>
+            <label><b>Title</b></label>
             <input type="text" v-model="newRecipe.title" />
           </div>
 
           <div class="group">
-            <label>Description</label>
+            <label><b>Description</b></label>
             <textarea v-model="newRecipe.description"></textarea>
           </div>
 
 
           <div class="group">
-            <label>Image Link</label>
+            <label><b>Recipe Image Link</b></label>
             <input type="text" v-model="newRecipe.image" />
           </div>
 
           <div class="group">
-            <label>Ingredients</label>
+            <label><b>Ingredients</b></label>
             <div class="ingredient" v-for="i in newRecipe.ingredientRows" :key="i">
               <input type="text" v-model="newRecipe.ingredients[i - 1]" />
             </div>
-            <button type="button" @click="addNewIngredient">Add Ingredient</button>
+
+            <button type="button" class="addButton" @click="addNewIngredient">
+              <i class="gg-add addIcon"></i>
+              <span>Add Ingredient</span>
+            </button>
+
           </div>
 
           <div class="group">
-            <label>Instructions</label>
+            <label><b>Instructions</b></label>
             <div class="instructions" v-for="i in newRecipe.instructionsRows" :key="i">
               <textarea v-model="newRecipe.instructions[i - 1]"></textarea>
             </div>
-            <button type="button" @click="addNewStep">Add step</button>
+
+            <button type="button" class="addButton" @click="addNewStep">
+              <i class="gg-add addIcon"></i>
+              <span>Add step</span>
+            </button>
           </div>
 
-          <button type="submit">Add Recipe</button>
-          <button type="button" @click="togglePopup">Close</button>
+
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-primary" type="submit">
+              <i class="gg-play-list-add"></i>
+              <span class="ms-3">Add Recipe</span>
+            </button>
+
+            <button class="btn btn-secondary" type="button" @click="togglePopup">
+              <i class="gg-close"></i>
+              <span class="ms-2">Close</span>
+            </button>
+
+          </div>
+
         </form>
       </div>
 
@@ -133,7 +158,31 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+/* Import icons */
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/add.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/play-list-add.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/close.css');
+
+.btn-primary {
+  background-color: rgb(3, 170, 3);
+  border-color: rgb(3, 170, 3);
+  display: flex;
+  align-items: center;
+}
+
+.btn-primary:hover {
+  background-color: rgb(0, 145, 0);
+  border-color: rgb(0, 145, 0);
+  display: flex;
+  align-items: center;
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+}
+
 .recipes .card {
   border: 3px solid #f5f5f5;
   color: rgb(255, 255, 255);
@@ -145,9 +194,9 @@ export default {
   box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.7);
   display: flex;
   flex-direction: column;
-  align-items: left; 
-  max-width: 400px; /* Updated property */
-  justify-content: space-between; /* Added property */
+  align-items: left;
+  max-width: 400px;
+  justify-content: space-between;
 }
 
 
@@ -159,7 +208,7 @@ export default {
 }
 
 .home {
-  color: #ffecc5;
+  color: #2e2e2e;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -184,7 +233,8 @@ p {
 .recipes {
   display: grid;
   margin-bottom: 60vh;
-  grid-template-columns: repeat(3, 1fr);}
+  grid-template-columns: repeat(3, 1fr);
+}
 
 .recipes .card {
   border: 3px solid #f5f5f5;
@@ -223,7 +273,7 @@ p {
 }
 
 .recipePopup .popupContent {
-  background-color: #081c33;
+  background-color: #ccd5ae;
   padding: 2rem;
   border-radius: 1rem;
   width: 100%;
@@ -233,7 +283,8 @@ p {
 }
 
 .popupContent h2 {
-  color: #fff;
+  color: #1e1e1e;
+  text-align: center;
 }
 
 .popupContent h2 {
@@ -277,7 +328,7 @@ p {
   border-radius: 5px;
   cursor: pointer;
   margin-right: 10px;
-  text-decoration: none; 
+  text-decoration: none;
   text-align: center;
 }
 
@@ -291,6 +342,10 @@ p {
   margin-top: 10px;
 }
 
+.addIcon {
+  margin-right: 5px;
+}
+
 .addButton {
   background-color: #5e83fc;
   color: #fff;
@@ -299,6 +354,8 @@ p {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .addButton:hover {
@@ -316,5 +373,11 @@ p {
   color: #000000;
   text-shadow: 2px 3px 6px rgba(255, 255, 255, 0.8);
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  .recipes {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

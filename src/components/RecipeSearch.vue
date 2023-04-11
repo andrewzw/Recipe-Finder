@@ -7,7 +7,6 @@
       <div class="col-lg-6 col-md-8 col-sm-10">
         <div class="search-box">
           <input type="text" class="form-control rounded-pill " placeholder="Search for recipes: Pizza, Soup, etc." v-model="searchQuery" />
-
           <button type="submit" class="btn btn-primary rounded-pill " @click="searchRecipes">
             Search
           </button>
@@ -15,7 +14,6 @@
         </div>
       </div>
     </div>
-
 
     <!-- Displays recipe -->
     <div class="row justify-content-center mb-5">

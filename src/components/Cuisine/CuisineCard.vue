@@ -13,12 +13,12 @@
 </template>
 
 <style scoped>
-
 .card-container {
   border-radius: 15px;
   box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.7);
   cursor: pointer;
 }
+
 .card-container:hover {
   box-shadow: 5px 10px 10px rgba(240, 240, 240, 0.6);
   text-shadow: 0px 4px 10px rgba(255, 255, 255, 0.6);
@@ -29,7 +29,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  
+
 }
 
 .imgbox img {
@@ -58,29 +58,29 @@
 
 @media screen and (min-width: 360px) {
   .card-container {
-  height: 300px;
-  width: 100%;
-  margin-left: 7.5%;
-}
+    height: 300px;
+    width: 100%;
+    margin-left: 7.5%;
+  }
 }
 
 @media screen and (min-width: 768px) {
   .card-container {
-  height: 300px;
-  width: 100%;
-  margin-right: -5%;
-}
+    height: 300px;
+    width: 100%;
+    margin-right: -5%;
+  }
 }
 </style>
 
 
 <script>
 export default {
-    props: {
-        cuisine: {
-            type: Object,
-            required: true,
-        },
+  props: {
+    cuisine: {
+      type: Object,
+      required: true,
     },
+  },
 };
 </script>

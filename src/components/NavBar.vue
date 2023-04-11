@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import logo from '@/assets/logo.png';
+import logo from '@/assets/Logos/linkedin_profile_image.png';
 
 export default {
   name: "AppNavbar",

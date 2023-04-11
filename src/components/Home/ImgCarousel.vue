@@ -3,8 +3,10 @@
     <div class="carousel-inner">
 
       <div class="floating-text container">
-        <h1>Mama's Recipe</h1>
+        <img
+          src="../../assets/Logos/logo_transparent.png" alt="Mama's Recipe Logo">
         <p>All your favorite childhood cooking in one place</p>
+
       </div>
 
       <div class="carousel-item active">
@@ -46,11 +48,15 @@ export default {
 </script>
   
 <style scoped>
+.container img{
+  height: 60%;
+  margin-bottom: 1%;
+}
 #carouselImg .carousel-item img {
   object-fit: cover;
   object-position: center;
   overflow: hidden;
-  height: 70vh;
+  height: 60vh;
 }
 
 #carouselImg .carousel-item:before {
