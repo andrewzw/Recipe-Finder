@@ -2,13 +2,6 @@
   <div id="app">
     <NavBar></NavBar>
     <router-view></router-view>
-
-    <footer class="py-2 bg-white text-black mt-4">
-      <div class="container">
-        <p class="text-center mb-0"><i>Website made by Yap Zhe Wei 103508895</i></p>
-      </div>
-    </footer>
-
   </div>
 </template>
 
@@ -42,8 +35,7 @@ export default {
 
 }
 
-h1,
-h2 {
+h1{
   font-family: "Pacifico", cursive;
 }
 
