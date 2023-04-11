@@ -1,7 +1,8 @@
 <template>
 	<div class="recipe mt-5">
-		<router-link to="/my-recipes">&lt; Back</router-link>
-		<h1>{{ recipe.title }}</h1>
+		<router-link to="/my-recipes"><i class="gg-arrow-left-o"></i></router-link>
+		
+		<h2>{{ recipe.title }}</h2>
 		<p class="desc">{{ recipe.description }}</p>
 		<hr />
 		<div class="ingredients">
@@ -13,9 +14,9 @@
 			</ul>
 		</div>
 		<div class="method">
-			<h3>Method</h3>
+			<h3>Instructions</h3>
 			<ol>
-				<li v-for="(step, i) in recipe.method" :key="i">
+				<li v-for="(step, i) in recipe.instructions" :key="i">
 					<span v-html="cleanText(step)"></span>
 				</li>
 			</ol>
@@ -56,6 +57,7 @@ export default {
 
 hr {
 	margin-bottom: 1rem;
+
 }
 
 h3 {
@@ -63,8 +65,9 @@ h3 {
 }
 
 .ingredients {
+	color: #f5f5f5;
 	padding: 1rem;
-	background-color: #081c33;
+	background-color: #081c338c;
 	border-radius: 0.5rem;
 	margin-bottom: 2rem;
 }
@@ -76,9 +79,9 @@ h3 {
 }
 
 .method ol li {
-	margin-bottom: 2rem;
-	padding-bottom: 1rem;
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
 	list-style-position: inside;
-	border-bottom: 1px solid #EEE;
+	border-bottom: 1px solid #b2a589;
 }
 </style>

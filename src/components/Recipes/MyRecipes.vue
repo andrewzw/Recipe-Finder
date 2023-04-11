@@ -1,7 +1,7 @@
 <template>
-  <div class="home mt-5 pb-5">
+  <div class="container home mt-5 pb-5">
     <h1>My Recipes</h1>
-    <button @click="togglePopup">Add new Recipe</button>
+    <button class="addButton" @click="togglePopup">Add new Recipe</button>
 
     <div class="recipes">
       <div class="card" v-for="recipe in $store.state.recipes" :key="recipe.slug">
@@ -39,7 +39,7 @@
           </div>
 
           <div class="group">
-            <label>Method</label>
+            <label>Instructions</label>
             <div class="method" v-for="i in newRecipe.methodRows" :key="i">
               <textarea v-model="newRecipe.method[i - 1]"></textarea>
             </div>
@@ -123,10 +123,15 @@ export default {
 
 <style>
 .home {
+  color: #ffecc5;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.home h1{
+  color: #000000;
 }
 
 h1 {
@@ -141,7 +146,8 @@ h1 {
 }
 
 .recipes .card {
-  color: aliceblue;
+  border: 3px solid #f5f5f5;
+  color: rgb(255, 255, 255);
   padding: 1rem;
   border-radius: 5px;
   margin: 1rem;
@@ -185,6 +191,10 @@ h1 {
   border-radius: 1rem;
   width: 100%;
   max-width: 768px;
+}
+
+.popupContent h2{
+color: #fff;
 }
 
 .popupContent h2 {
@@ -240,5 +250,13 @@ h1 {
   margin-top: 10px;
 }
 
-
+.addButton {
+  background-color: #5e83fc;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
 </style>
