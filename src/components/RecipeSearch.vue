@@ -2,10 +2,11 @@
 <template>
   <div class="container-fluid mt-5 pt-3">
     <h2 class="text-center my-3">Recipe Finder</h2>
+    <p>You can start off by searching the recipe that you want</p>
     <div class="mb-4 row justify-content-center">
       <div class="col-lg-6 col-md-8 col-sm-10">
         <div class="search-box">
-          <input type="text" class="form-control rounded-pill " placeholder="Search for recipes" v-model="searchQuery" />
+          <input type="text" class="form-control rounded-pill " placeholder="Search for recipes: Pizza, Soup, etc." v-model="searchQuery" />
 
           <button type="submit" class="btn btn-primary rounded-pill " @click="searchRecipes">
             Search
@@ -70,7 +71,7 @@ export default {
       if (!this.searchQuery.trim()) {
         return;
       }
-     const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
+      const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
       // const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${this.searchQuery}&number=20`;
 
@@ -111,10 +112,14 @@ export default {
 </script>
 
 <style scoped>
-.container-fluid {
-  height: fit-content;
-
+p {
+  text-align: center;
 }
+.container-fluid {
+  min-height: 100vh;
+  padding-bottom: 2rem;
+}
+
 .card {
   border: none;
   margin-bottom: 2rem;

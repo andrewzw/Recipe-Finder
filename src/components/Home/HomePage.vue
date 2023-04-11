@@ -1,20 +1,36 @@
 <template>
-      <ImgCarousel></ImgCarousel>
+  <ImgCarousel></ImgCarousel>
   <div class="container mt-5 pt-1">
 
     <div class="col-md-6">
-      <h2 class="mt-5">Welcome to our site!</h2>
+      <h2 class="mt-5">Start off here!</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-        tristique sapien vel diam lacinia, a bibendum ex porta.
+        Choose what you would like to do on this site
       </p>
     </div>
-    <div class="col-md-6 d-flex align-items-center justify-content-center">
-      <img src="https://via.placeholder.com/500x300" alt="Placeholder image" class="img-fluid rounded" />
-    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Search Recipes</h5>
+            <p class="card-text">Search for recipes by ingredients or by name</p>
+            <router-link to="/recipe-search" class="btn btn-primary">Search</router-link>
+          </div>
+        </div>
+      </div>
 
+      <div class="col-md-2">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">My Recipe</h5>
+            <p class="card-text">Add your own recipe</p>
+            <router-link to="/my-recipes" class="btn btn-primary">Add</router-link>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
-  
 </template>
   
 <script>
@@ -34,6 +50,8 @@ export default {
 }
 </script>
 
-<style scoped>.container {
+<style scoped>
+.container {
   min-height: 100vh;
-}</style>
+}
+</style>
