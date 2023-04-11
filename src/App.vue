@@ -36,7 +36,7 @@ export default {
 }
 
 h1{
-  font-family: "Pacifico", cursive;
+  font-family: "Lato", sans-serif;
 }
 
 p {

@@ -113,6 +113,7 @@ export default {
 <style scoped>
 .container-fluid {
   height: fit-content;
+
 }
 .card {
   border: none;
@@ -139,7 +140,6 @@ export default {
   width: 550px;
   margin: auto;
   padding: 10px 10px 10px 40px;
-
 }
 
 .search-box input {

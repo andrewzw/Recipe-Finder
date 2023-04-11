@@ -1,6 +1,7 @@
 <template>
-  <div class="container home mt-5 pb-5">
-    <h1>My Recipes</h1>
+  <div class="container home mt-5 pt-5">
+    <h2>My Recipes</h2>
+    <p>Make and upload your own recipes</p>
     <button class="addButton" @click="togglePopup">Add new Recipe</button>
 
     <div class="recipes">
@@ -130,18 +131,23 @@ export default {
   align-items: center;
 }
 
-.home h1{
+.home h2 ,p{
   color: #000000;
 }
 
-h1 {
+.card h2 {
+  color: #fff;
   font-size: 3rem;
   margin-bottom: 32px;
 }
 
+.card p {
+  color: #fff;
+}
+
 .recipes {
   display: grid;
-  margin-bottom: 50vh;
+  margin-bottom: 60vh;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
@@ -258,5 +264,10 @@ color: #fff;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+}
+
+.addButton:hover {
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+
 }
 </style>
