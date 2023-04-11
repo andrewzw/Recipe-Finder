@@ -1,4 +1,5 @@
 <template>
+      <ImgCarousel></ImgCarousel>
   <div class="container mt-5 pt-1">
 
     <div class="col-md-6">
@@ -13,16 +14,14 @@
     </div>
 
   </div>
-</template>
-
   
-
+</template>
   
 <script>
+import ImgCarousel from './ImgCarousel.vue';
 export default {
-
   components: {
-
+    ImgCarousel,
   },
   data() {
     return {
@@ -35,8 +34,6 @@ export default {
 }
 </script>
 
-<style scoped>
-.container {
+<style scoped>.container {
   min-height: 100vh;
-}
-</style>
+}</style>
