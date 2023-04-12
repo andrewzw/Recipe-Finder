@@ -10,51 +10,51 @@
     <div class="row">
 
       <div class="col-12 col-md-4 mb-3">
-        <router-link to="/recipe-search" class="btn m-3" >
+        <router-link to="/recipe-search" class="btn m-3">
 
-        <div class="card fixed-height ">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Search Recipes</h5>
-              <i class="m-3" >
+          <div class="card fixed-height ">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Search Recipes</h5>
+              <i class="m-3">
                 <img src="./../../assets/search.png" alt="Cuisine logo" height="150" />
               </i>
               <p class="card-text">Search for recipes by ingredients or by name</p>
+            </div>
+
           </div>
-        
-        </div>
-      </router-link>
+        </router-link>
       </div>
 
       <div class="col-12 col-md-4 mb-3">
-        <router-link to="/recipe-cuisine" class="btn m-3" >
+        <router-link to="/recipe-cuisine" class="btn m-3">
 
-        <div class="card fixed-height ">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Our Cuisine</h5>
+          <div class="card fixed-height ">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Our Cuisine</h5>
               <i class="m-3">
                 <img src="./../../assets/cuisine.png" alt="Cuisine logo" height="150" />
               </i>
-            <p class="card-text">We've picked out the top 3 dishes for each cuisine</p>
+              <p class="card-text">We've picked out the top 3 dishes for each cuisine</p>
+            </div>
+
           </div>
-        
-        </div>
-      </router-link>
+        </router-link>
       </div>
 
       <div class="col-12 col-md-4 mb-3">
-        <router-link to="/my-recipes" class="btn m-3" >
+        <router-link to="/my-recipes" class="btn m-3">
 
-        <div class="card fixed-height ">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">My Recipes</h5>
+          <div class="card fixed-height ">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">My Recipes</h5>
               <i class="m-3">
-                <img src="./../../assets/recipe.png" alt="Cuisine logo" height="150"/>
+                <img src="./../../assets/recipe.png" alt="Cuisine logo" height="150" />
               </i>
-            <p class="card-text">Add your own recipe to your cook book!</p>
+              <p class="card-text">Add your own recipe to your cook book!</p>
+            </div>
+
           </div>
-        
-        </div>
-      </router-link>
+        </router-link>
       </div>
 
 

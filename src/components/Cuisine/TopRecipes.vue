@@ -2,8 +2,8 @@
   <div id="recipe-cuisine-specific">
     <div v-if="selectedCuisine">
 
-      <router-link class="btn mt-3 rounded-pill border border-dark custom-btn" style="border-color: black;" @click="goBack"
-        :to="{ path: '/recipe-cuisine/' }">
+      <router-link class="btn mt-3 rounded-pill border border-dark custom-btn" style="border-color: black;"
+        @click="goBack" :to="{ path: '/recipe-cuisine/' }">
         <i class="gg-arrow-left-o"></i>
       </router-link>
 
@@ -11,9 +11,9 @@
         <!-- loops through the filteredDishes array and displays the name, image, description, ingredients, and instructions -->
         <div v-for="dish in filteredDishes" :key="dish.id" class="col">
           <div class="card h-100 cuisine-card">
-            
+
             <img :src="dish.image" :alt="dish.name" class="card-img-top" style="height: 400px; object-fit: cover;">
-            
+
             <div class="card-body">
 
               <h5 class="card-title">{{ dish.name }}</h5>

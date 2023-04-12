@@ -3,8 +3,7 @@
     <div class="carousel-inner">
 
       <div class="floating-text container">
-        <img
-          src="../../assets/Logos/logo_transparent.png" alt="Mama's Recipe Logo">
+        <img src="../../assets/Logos/logo_transparent.png" alt="Mama's Recipe Logo">
         <p>All your favorite childhood cooking in one place</p>
 
       </div>
