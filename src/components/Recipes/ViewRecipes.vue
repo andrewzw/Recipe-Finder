@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import './recipes.css';
 import { useStore } from 'vuex';
 export default {
 	name: 'AddRecipes',
@@ -41,47 +42,3 @@ export default {
 	}
 }
 </script>
-
-<style>
-.recipe {
-	padding: 1rem;
-	max-width: 768px;
-	margin: 0 auto;
-}
-
-.desc {
-	font-size: 1.125rem;
-	line-height: 1.4;
-	margin-bottom: 1rem;
-}
-
-hr {
-	margin-bottom: 1rem;
-
-}
-
-h3 {
-	margin-bottom: 1rem;
-}
-
-.ingredients {
-	color: #f5f5f5;
-	padding: 1rem;
-	background-color: #081c338c;
-	border-radius: 0.5rem;
-	margin-bottom: 2rem;
-}
-
-.ingredients ul li {
-	list-style-position: inside;
-	line-height: 1.4;
-	margin-bottom: 1rem;
-}
-
-.instructions ol li {
-	margin-bottom: 1rem;
-	padding-bottom: 0.5rem;
-	list-style-position: inside;
-	border-bottom: 1px solid #b2a589;
-}
-</style>
