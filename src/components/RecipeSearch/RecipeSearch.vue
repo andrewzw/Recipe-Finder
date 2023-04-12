@@ -55,7 +55,6 @@
 <script>
 import axios from 'axios';
 
-
 export default {
   data() {
     return {
@@ -109,93 +108,4 @@ export default {
 };
 </script>
 
-<style scoped>
-p {
-  text-align: center;
-}
-.container-fluid {
-  min-height: 100vh;
-  padding-bottom: 2rem;
-}
-
-.card {
-  border: none;
-  margin-bottom: 2rem;
-}
-
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
-  border-radius: 0.5rem 0.5rem 0 0;
-}
-
-.card-title {
-  font-size: 1.2rem;
-}
-
-.btn-primary {
-  border-radius: 0;
-}
-
-.search-box {
-  display: flex;
-  align-items: center;
-  width: 550px;
-  margin: auto;
-  padding: 10px 10px 10px 40px;
-}
-
-.search-box input {
-  background-color: #fff6e4;
-  border: none;
-  font-size: 16px;
-  outline: none;
-  width: 100%;
-  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.3);
-}
-
-.search-box button {
-  background-color: #D4A373;
-  border: 0;
-  margin-left: 10px;
-  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 768px) {
-  .search-box {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .search-box input {
-    font-size: 14px;
-  }
-
-  .row {
-    margin: 0 -10px;
-  }
-
-  .col-md-4 {
-    padding: 10px;
-  }
-}
-
-@media (max-width: 820px) {
-  .search-box {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .search-box input {
-    font-size: 14px;
-  }
-
-  .row {
-    margin: 0 -10px;
-  }
-
-  .col-md-4 {
-    padding: 10px;
-  }
-}
-</style>
+<style scoped src="./recipesearch.css"></style>

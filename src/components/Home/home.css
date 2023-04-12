@@ -1,0 +1,123 @@
+/* HomePage css */
+.card {
+  transition: border 0.3s, color 0.05s;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.13);
+  border: 0px;
+  box-shadow: 6px 7px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.5);
+  border: 3px solid #ffffff;
+}
+
+.container {
+  min-height: 50vh;
+}
+
+.card-title {
+  text-align: center;
+  color: #ffffff;
+}
+
+.card-text {
+  text-align: center;
+  color: #f5f5f5;
+}
+
+.card.fixed-height {
+  height: 100%;
+  min-height: 200px;
+}
+
+.card.fixed-height .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* ImgCarousel css */
+
+.carouselImg img {
+  height: 60%;
+  margin-bottom: 1%;
+}
+#carouselImg .carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  overflow: hidden;
+  height: 60vh;
+}
+
+#carouselImg .carousel-item:before {
+  content: "";
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(97, 97, 97, 0.3)
+  );
+  background-color: rgba(0, 0, 0, 0.7);
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#carouselImg {
+  position: relative;
+}
+
+.floating-text {
+  position: absolute;
+  margin-top: 5vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 10;
+  height: 100%;
+}
+
+.floating-text p {
+  color: #f5f5f5;
+  text-align: center;
+}
+
+.floating-text img {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1%;
+}
+
+.carouselImg p {
+  color: #f5f5f5;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  #carouselImg .carousel-item img {
+    margin-top: 0;
+    height: 40vh;
+  }
+
+  #carouselImg .carousel-item:before {
+    height: 50vh;
+  }
+
+  .container {
+    padding-bottom: 30%;
+  }
+
+  .floating-text img {
+    width: 50%;
+    max-width: 400px;
+    margin-bottom: 1%;
+  }
+}

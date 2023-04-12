@@ -93,7 +93,6 @@
 </template>
 
 <script>
-import './recipes.css';
 import { ref } from 'vue'; //composition API
 import { useStore } from 'vuex';
 export default {
@@ -157,3 +156,5 @@ export default {
   }
 }
 </script>
+
+<style scoped src="./recipes.css"></style>

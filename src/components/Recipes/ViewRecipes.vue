@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import './recipes.css';
 import { useStore } from 'vuex';
+
 export default {
 	name: 'AddRecipes',
 	computed: {
@@ -42,3 +42,5 @@ export default {
 	}
 }
 </script>
+
+<style scoped src="./recipes.css"></style>

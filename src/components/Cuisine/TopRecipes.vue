@@ -7,7 +7,7 @@
         <i class="gg-arrow-left-o"></i>
       </router-link>
 
-      <div class="mt-1 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+      <div class="mt-1 mb-5 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <!-- loops through the filteredDishes array and displays the name, image, description, ingredients, and instructions -->
         <div v-for="dish in filteredDishes" :key="dish.id" class="col">
           <div class="card h-100 cuisine-card">
@@ -28,36 +28,6 @@
     </div>
   </div>
 </template>
-
-
-<style scoped>
-@import url('https://unpkg.com/css.gg@2.0.0/icons/css/arrow-left-o.css');
-.custom-btn {
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.custom-btn:hover {
-  background-color: #333;
-  color: #f5f5f5;
-}
-
-.cuisine-card {
-  border: 0;
-  border-radius: 15px;
-  color: #fcf7e3;
-  background-color: #00000081;
-  box-shadow: 6px 7px 8px rgba(0, 0, 0, 0.3);
-
-}
-
-.cuisine-card img {
-  border-radius: 15px 15px 0 0;
-}
-
-.cuisine-card h5 {
-  color: #ffffff;
-}
-</style>
 
 <script>
 import { top3 } from '../../assets/cuisine_data.js';
@@ -93,3 +63,5 @@ export default {
   },
 };
 </script>
+
+<style scoped src="./cuisine.css"></style>
