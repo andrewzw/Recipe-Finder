@@ -2,8 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 import RecipeSearch from '../src/components/RecipeSearch/RecipeSearch.vue';
 import HomePage from '../src/components/Home/HomePage.vue';
 import RecipeCuisine from '../src/components/Cuisine/RecipeCuisine.vue';
-import MyRecipes from '../src/components/Recipes/MyRecipes.vue';
-import AddRecipes from '../src/components/Recipes/ViewRecipes.vue';
+import MyRecipes from '../src/components/MyRecipes/MyRecipes.vue';
+import AddRecipes from '../src/components/MyRecipes/ViewRecipes.vue';
 
 const routes = [
   {

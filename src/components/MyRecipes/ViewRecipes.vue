@@ -1,5 +1,5 @@
 <template>
-	<div class="recipe mt-5 pt-5">
+	<div class="recipe mt-3 pt-5">
 		<router-link to="/my-recipes"><i class="gg-arrow-left-o"></i></router-link> <!-- back to my recipes -->
 
 		<h2>{{ recipe.title }} </h2>
@@ -15,11 +15,14 @@
 		</div>
 		<div class="instructions">
 			<h3>Instructions</h3>
-			<ol>
-				<li v-for="(step, i) in recipe.instructions" :key="i">
-					<span v-html="cleanText(step)"></span>
-				</li>
-			</ol>
+			<table class="table table-striped">
+				<tbody>
+					<tr v-for="(step, i) in recipe.instructions" :key="i">
+						<th scope="row">{{ i + 1 }}</th>
+						<td><span v-html="sanitiseText(step)"></span></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </template>
@@ -36,7 +39,7 @@ export default {
 		}
 	},
 	methods: {
-		cleanText(text) {
+		sanitiseText(text) {
 			return text.replace(/\n/g, '<br />')
 		}
 	}
