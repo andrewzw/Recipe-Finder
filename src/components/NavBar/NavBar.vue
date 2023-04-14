@@ -10,8 +10,6 @@
         </div>
       </i>
 
-
-
       <div class="nav-content container-fluid" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
 
         <div class="logo ">
@@ -20,6 +18,7 @@
             <h1><em class="fas fa-utensils"></em> Mama's Recipe</h1>
           </router-link>
         </div>
+
 
         <ul class="nav-items" role="menu">
           <li class="nav-item" role="menuitem">
