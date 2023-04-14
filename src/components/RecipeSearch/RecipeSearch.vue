@@ -4,7 +4,7 @@
     <p>You can start off by searching the recipe that you want</p>
     <div class="mb-4 row justify-content-center">
       <div class="col-lg-6 col-md-8 col-sm-10">
-        <div class="search-box">
+        <div class="searchBox">
           <label for="search_form">Search: </label>
           <input type="text" class="form-control rounded-pill " placeholder="Pizza, Soup, etc." id="search_form"
             v-model="searchQuery" aria-label="Search for recipes" />

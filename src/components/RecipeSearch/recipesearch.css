@@ -51,7 +51,7 @@ h3 {
   background-color: #fd0d0d1f;
 }
 
-.search-box {
+.searchBox {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,7 +61,7 @@ h3 {
   flex-direction: row;
 }
 
-.search-box input {
+.searchBox input {
   background-color: #fff6e4;
   border: none;
   font-size: 16px;
@@ -71,7 +71,7 @@ h3 {
   max-width: 450px;
 }
 
-.search-box button {
+.searchBox button {
   background-color: #d4a373;
   border: 0;
   margin-left: 10px;
@@ -90,12 +90,12 @@ h3 {
 }
 
 @media (max-width: 768px), (max-width: 820px) {
-  .search-box {
+  .searchBox {
     width: 100%;
     padding: 10px;
   }
 
-  .search-box input {
+  .searchBox input {
     font-size: 14px;
   }
 
