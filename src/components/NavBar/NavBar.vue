@@ -1,42 +1,23 @@
 <template>
-  <div>
-    <div class="nav-menu">
+  <div class="topnav" id="myTopnav">
 
-      <i class="fas fa-bars" @click="showMenu()">
-        <div class="menu">
-          <div class="bar1"></div>
-          <div class="bar2"></div>
-          <div class="bar3"></div>
-        </div>
-      </i>
+    <router-link to="/" class="navbar-brand d-flex align-items-center">
+      <img :src="logo" alt="Logo" class="logo d-none d-lg-inline" />
+      <h1><em class="fas fa-utensils"></em> Mama's Recipe</h1>
+    </router-link>
 
-      <div class="nav-content container-fluid" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
-
-        <div class="logo ">
-          <router-link to="/" class="navbar-brand d-flex align-items-center">
-            <img :src="logo" alt="Logo" class="logo d-none d-lg-inline" />
-            <h1><em class="fas fa-utensils"></em> Mama's Recipe</h1>
-          </router-link>
-        </div>
-
-
-        <ul class="nav-items" role="menu">
-          <li class="nav-item" role="menuitem">
-            <router-link to="/" class="nav-link"><strong>Home</strong></router-link>
-          </li>
-          <li class="nav-item" role="menuitem">
-            <router-link to="/recipe-search" class="nav-link"><strong>Search Recipes</strong></router-link>
-          </li>
-          <li class="nav-item" role="menuitem">
-            <router-link to="/recipe-cuisine/" class="nav-link"><strong>Cuisine</strong></router-link>
-          </li>
-          <li class="nav-item" role="menuitem">
-            <router-link to="/my-recipes/" class="nav-link"><strong>My Recipes</strong></router-link>
-          </li>
-        </ul>
-
-      </div>
+    <div class="navItems">
+      <router-link to="/" class="nav-link"><strong>Home</strong></router-link>
+      <router-link to="/recipe-search" class="nav-link"><strong>Search Recipes</strong></router-link>
+      <router-link to="/recipe-cuisine/" class="nav-link"><strong>Cuisine</strong></router-link>
+       <router-link to="/my-recipes/" class="nav-link"><strong>My Recipes</strong></router-link>
+      <a href="javascript:void(0);" class="icon" @click="showMenu()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </a>
     </div>
+
   </div>
 </template>
 
@@ -48,13 +29,17 @@ export default {
   data() {
     return {
       logo,
-      showMobileMenu: false,
     };
   },
   methods: {
     showMenu() {
-      this.showMobileMenu = !this.showMobileMenu;
-    },
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
 
   },
 };

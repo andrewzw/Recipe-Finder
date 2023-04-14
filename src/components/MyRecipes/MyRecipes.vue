@@ -1,5 +1,5 @@
 <template>
-  <div id="my_recipe" class="container">
+  <div id="myRecipe" class="container">
     <h1>My Recipes</h1>
     <p>Make and upload your own recipes</p>
     <button class="addButton" @click="togglePopup" aria-label="Add new recipe">
@@ -10,7 +10,7 @@
 
     <div class="recipes">
       <div class="card" v-for="recipe in $store.state.recipes" :key="recipe.slug">
-        <img :src="recipe.image" alt="Recipe image" class="recipe-image">
+        <img :src="recipe.image" alt="Recipe image" class="recipeImage">
 
         <h2>{{ recipe.title }}</h2>
         <p>{{ recipe.description }}</p>

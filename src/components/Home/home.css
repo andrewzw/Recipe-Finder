@@ -82,7 +82,7 @@
 
 .floating-text {
   position: absolute;
-  margin-top: 5vh;
+  margin-top: 2vh;
   top: 0;
   left: 0;
   right: 0;
@@ -122,7 +122,7 @@
   }
 
   .container {
-    padding-bottom: 30%;
+    padding-bottom: 40%;
   }
 
   .floating-text img {

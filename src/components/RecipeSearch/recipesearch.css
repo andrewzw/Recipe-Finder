@@ -54,10 +54,13 @@ h3 {
 .search-box {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 550px;
   margin: auto;
-  padding: 10px 10px 10px 40px;
+  padding: 10px;
+  flex-direction: row;
 }
+
 
 .search-box input {
   background-color: #fff6e4;
@@ -66,6 +69,7 @@ h3 {
   outline: none;
   width: 100%;
   box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.3);
+  max-width: 450px; 
 }
 
 .search-box button {
@@ -81,7 +85,7 @@ h3 {
 
 @media screen and (max-width: 767px) {
   #recipe-search {
-    margin-top: 0;
+    margin-top: 2rem;
     padding-top: 0;
   }
 }

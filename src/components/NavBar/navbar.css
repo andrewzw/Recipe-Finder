@@ -1,13 +1,13 @@
-.menu {
-  display: inline-block;
-  cursor: pointer;
-}
-
 .logo {
   height: 59px;
   padding: 0;
   width: auto;
   margin-right: 30px;
+}
+
+.navItems{
+margin-top: 1rem;
+float: right;
 }
 
 .bar1,
@@ -20,45 +20,11 @@
   transition: 0.4s;
 }
 
-.nav-content {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background-color: #ccd5ae;
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 30px;
-  align-items: center;
-}
-
-.nav-items {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  padding: 0 10px;
-}
-
-i {
-  display: none;
-}
-
-.nav-items li:hover {
-  color: white;
-  text-shadow: 2px 2px 4px #000000;
-}
-
+/* Remove Mama's Recipe color on active */
 .navbar-brand.router-link-exact-active h1 {
   text-shadow: none;
   color: rgb(0, 0, 0);
-  /* Mama's Recipe color on active */
+  font-family: "Georgia", Times, serif;
 }
 
 .router-link-exact-active:not(.navbar-brand) {
@@ -66,40 +32,57 @@ i {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Mobile version - hidden hamburger menu */
-@media screen and (max-width: 768px) {
-  .nav-menu {
-    padding-top: 10px;
-    position: sticky;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0);
-  }
 
-  .open-menu {
-    opacity: 1;
-    height: 150px;
-  }
+.topnav {
+  overflow: hidden;
+  background-color: #ccd5ae;
+}
 
-  .closed-menu {
-    opacity: 0;
-    height: 0;
-    padding: 0;
-  }
+.topnav a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 0px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
 
-  .nav-content {
-    flex-direction: column;
-    z-index: 100;
-    position: relative;
-    transition: all 0.2s ease-out;
-  }
+.topnav a:hover {
+  text-shadow: 0 0 5px #000000;
+  color: #f5f5f5;
+}
 
-  .nav-items {
-    flex-direction: column;
-  }
 
-  i {
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
     display: block;
-    text-align: right;
-    padding: 0 10px 10px 0;
   }
+
+  .icon{
+    background-color: #ccd5ae;
+  }
+
+  .navItems{
+    margin-top: 0rem;
+    }
+
+    .topnav.responsive {position: relative;}
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: #ccd5ae;
+    }
+    .topnav.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
 }
