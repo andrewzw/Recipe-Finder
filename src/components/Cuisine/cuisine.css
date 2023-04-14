@@ -40,6 +40,18 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
+#recipe-cuisine{
+  padding-top: 80px;
+  min-height: calc(100vh);
+}
+
+@media screen and (max-width: 767px) {
+  #recipe-cuisine{
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
+
 @media screen and (min-width: 360px) {
   .card-container {
     height: 300px;
@@ -55,6 +67,8 @@
     margin-right: -5%;
   }
 }
+
+
 
 /* TopRecipes css */
 @import url("https://unpkg.com/css.gg@2.0.0/icons/css/arrow-left-o.css");

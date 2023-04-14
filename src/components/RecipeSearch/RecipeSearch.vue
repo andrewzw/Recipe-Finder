@@ -1,7 +1,7 @@
 
 <template>
-  <div class="container-fluid mt-5 pt-3">
-    <h2 class="text-center my-3">Recipe Finder</h2>
+  <div id="recipe-search" class="container-fluid">
+    <h2 class="text-center ">Recipe Finder</h2>
     <p>You can start off by searching the recipe that you want</p>
     <div class="mb-4 row justify-content-center">
       <div class="col-lg-6 col-md-8 col-sm-10">
@@ -25,21 +25,34 @@
           <div class="card-body">
             <h5 class="card-title">{{ recipe.title }}</h5>
 
-            <button class="btn btn-primary" @click="toggleDetails(recipe)">
-              View Details
-            </button>
+            <div class="d-flex justify-content-center"> 
+              <button class="btn btn-outline-primary mr-2"
+                @click="toggleIngredients(recipe)">
+                View Ingredients
+              </button>
+              <button class="btn btn-outline-danger" @click="toggleSteps(recipe)">
+                View Steps
+              </button>
 
-            <div v-if="recipe.showDetails">
+            </div>
+
+
+            <div v-if="recipe.showIngredients">
               <h6>Ingredients:</h6>
               <ul>
                 <li v-for="ingredient in recipe.ingredients" :key="ingredient.id">{{ ingredient.name }}</li>
               </ul>
+            </div>
 
+
+            <div v-if="recipe.showSteps">
               <h6>Steps:</h6>
               <ol>
                 <li v-for="(step, index) in recipe.steps" :key="index">{{ step.step }}</li>
               </ol>
             </div>
+
+
 
           </div>
         </div>
@@ -62,6 +75,8 @@ export default {
       searchQuery: '',
       recipes: [],
       showDetails: false,
+      showIngredients: false,
+      showSteps: false,
     };
   },
   methods: {
@@ -69,8 +84,8 @@ export default {
       if (!this.searchQuery.trim()) {
         return;
       }
-      const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
-      // const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
+      //const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
+      const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${this.searchQuery}&number=20`;
 
 
@@ -87,8 +102,8 @@ export default {
     },
 
     async getIngredients(id) {
-      const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
-      // const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
+      //const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
+      const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`;
 
       try {
@@ -105,7 +120,16 @@ export default {
     toggleDetails(recipe) {
       recipe.showDetails = !recipe.showDetails;
     },
+
+    toggleIngredients(recipe) {
+      recipe.showIngredients = !recipe.showIngredients;
+    },
+
+    toggleSteps(recipe) {
+      recipe.showSteps = !recipe.showSteps;
+    },
   },
+
 };
 </script>
 

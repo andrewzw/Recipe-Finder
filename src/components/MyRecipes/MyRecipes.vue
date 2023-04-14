@@ -1,5 +1,5 @@
 <template>
-  <div class="container home mt-5 pt-5">
+  <div id="my_recipe" class="container">
     <h2>My Recipes</h2>
     <p>Make and upload your own recipes</p>
     <button class="addButton" @click="togglePopup">
@@ -25,8 +25,8 @@
       </div>
     </div>
 
-    <div class="recipePopup" v-if="popupOpen">
-      <div class="popupContent mt-5">
+    <div class="recipePopup mt-3" v-if="popupOpen">
+      <div class="popupContent">
         <h2>Add new recipe</h2>
         <form @submit.prevent="addNewRecipe"> <!-- prevent submit if form is not filled-->
           <div class="group">

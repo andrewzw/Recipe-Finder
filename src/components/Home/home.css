@@ -38,6 +38,12 @@
   height: 100%;
 }
 
+@media (max-width: 768px) {
+  .container {
+    text-align: center;
+  }
+}
+
 /* ImgCarousel css */
 
 .carouselImg img {
