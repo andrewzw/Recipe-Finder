@@ -1,6 +1,7 @@
 <template>
   <div v-if="cuisine" class="card-container" @click="$emit('card-clicked', cuisine)" role="button">
-
+    
+    <!-- Displays the selected cuisine information in a card-->
     <div class="imgbox">
       <img :src="cuisine.image" class="card-img-top" alt="Cuisine Name" />
       <div class="card-img-overlay d-flex align-items-center justify-content-center">

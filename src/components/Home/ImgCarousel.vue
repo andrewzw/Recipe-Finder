@@ -7,7 +7,8 @@
         <p>All your favorite childhood cooking in one place</p>
 
       </div>
-
+      
+      <!-- Carousel Images -->
       <div class="carousel-item ">
         <img
           src="https://images.unsplash.com/photo-1458644267420-66bc8a5f21e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1036&q=80"
@@ -40,6 +41,7 @@
 
     </div>
 
+    <!-- Carousel Controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselImg" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>

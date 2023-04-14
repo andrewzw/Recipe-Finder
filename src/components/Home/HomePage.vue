@@ -8,7 +8,8 @@
       </p>
     </div>
     <div class="row">
-
+      
+      <!-- Display the 3 choices -->
       <div class="col-12 col-md-4 mb-3">
         <router-link to="/recipe-search" class="btn m-3" aria-label="Search Recipes">
 

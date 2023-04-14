@@ -7,6 +7,7 @@
 		</router-link>
 
 
+		<!-- Displays information of the selected recipe -->
 		<h2>{{ recipe.title }} </h2>
 		<p class="desc">{{ recipe.description }}</p>
 		<hr />
@@ -47,8 +48,9 @@ import { useStore } from 'vuex';
 export default {
 	name: 'ViewRecipes',
 	computed: {
+		// Gets the recipe from the store from localStorage
 		recipe() {
-			const store = useStore();
+			const store = useStore(); 
 			return store.state.recipes.find(recipe => recipe.slug === this.$route.params.slug);
 		}
 	},

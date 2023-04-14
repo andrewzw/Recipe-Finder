@@ -26,14 +26,19 @@
             <h2 class="card-title">{{ recipe.title }}</h2>
 
             <div class="d-flex justify-content-center">
+              
+              <!-- Display ingredients on toggle-->
               <button class="btn btn-outline-primary" @click="toggleIngredients(recipe)">
                 View Ingredients
               </button>
+
+              <!-- Display steps on toggle-->
               <button class="btn btn-outline-danger" @click="toggleSteps(recipe)">
                 View Steps
               </button>
             </div>
 
+            <!-- Prints ingredients -->
             <div v-if="recipe.showIngredients">
               <h3>Ingredients:</h3>
               <ul>
@@ -41,7 +46,7 @@
               </ul>
             </div>
 
-
+            <!-- Prints steps -->
             <div v-if="recipe.showSteps">
               <h3>Steps:</h3>
               <ol>
@@ -75,6 +80,7 @@ export default {
     };
   },
   methods: {
+    // Search for recipes using the search query
     async searchRecipes() {
       if (!this.searchQuery.trim()) {
         return;
@@ -85,10 +91,10 @@ export default {
 
 
       try {
-        const response = await axios.get(apiUrl);
-        this.recipes = response.data.results;
-        // Get ingredients for each recipe
-        for (let recipe of this.recipes) {
+        const response = await axios.get(apiUrl); // Fetch recipes
+        this.recipes = response.data.results; // Set recipes
+
+        for (let recipe of this.recipes) { // Get ingredients for each recipe
           this.getIngredients(recipe.id);
         }
       } catch (error) {
@@ -96,13 +102,14 @@ export default {
       }
     },
 
+    // Get ingredients for a recipe
     async getIngredients(id) {
       const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
       //const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`;
 
       try {
-        const response = await axios.get(apiUrl); // Get recipe details
+        const response = await axios.get(apiUrl); // Fetch recipe details
         const recipe = this.recipes.find(r => r.id === id); // Find recipe in recipes array
         recipe.ingredients = response.data.extendedIngredients; // Add ingredients to recipe
         recipe.steps = response.data.analyzedInstructions[0].steps; // Add steps to recipe
@@ -112,10 +119,7 @@ export default {
       }
     },
 
-    toggleDetails(recipe) {
-      recipe.showDetails = !recipe.showDetails;
-    },
-
+    //Toggle the showing of ingredients and steps
     toggleIngredients(recipe) {
       recipe.showIngredients = !recipe.showIngredients;
     },

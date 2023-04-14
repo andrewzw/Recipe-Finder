@@ -8,6 +8,7 @@
       </router-link>
 
       <div class="mt-1 mb-5 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        
         <!-- loops through the filteredDishes array and displays the name, image, description, ingredients, and instructions -->
         <div v-for="dish in filteredDishes" :key="dish.id" class="col">
           <div class="card h-100 cuisine-card">
