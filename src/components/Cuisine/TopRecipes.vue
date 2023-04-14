@@ -4,7 +4,7 @@
 
       <router-link class="btn mt-3 rounded-pill border border-dark custom-btn" style="border-color: black;"
         @click="goBack" :to="{ path: '/recipe-cuisine/' }">
-        <i class="gg-arrow-left-o"></i>
+        <em class="gg-arrow-left-o"></em>
       </router-link>
 
       <div class="mt-1 mb-5 row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -18,8 +18,8 @@
 
               <h5 class="card-title">{{ dish.name }}</h5>
               <p class="card-text">{{ dish.desc }}</p>
-              <p class="card-text"><b>Ingredients: </b><br>{{ dish.ingredients }}</p>
-              <p class="card-text"><b>Instructions: </b><br>{{ dish.instructions }}</p>
+              <p class="card-text"><strong>Ingredients: </strong><br>{{ dish.ingredients }}</p>
+              <p class="card-text"><strong>Instructions: </strong><br>{{ dish.instructions }}</p>
             </div>
           </div>
         </div>
