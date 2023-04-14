@@ -5,9 +5,9 @@
   margin-right: 30px;
 }
 
-.navItems{
-margin-top: 1rem;
-float: right;
+.navItems {
+  margin-top: 1rem;
+  float: right;
 }
 
 .bar1,
@@ -32,11 +32,15 @@ float: right;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-
 .topnav {
-  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
   background-color: #ccd5ae;
 }
+
 
 .topnav a {
   float: left;
@@ -53,36 +57,51 @@ float: right;
   color: #f5f5f5;
 }
 
+.navItems {
+  margin-top: 1rem;
+  float: right;
+
+}
 
 .topnav .icon {
   display: none;
 }
 
 @media screen and (max-width: 600px) {
-  .topnav a {display: none;}
+  .topnav a {
+    display: none;
+  }
   .topnav a.icon {
     float: right;
     display: block;
   }
 
-  .icon{
+  .icon {
     background-color: #ccd5ae;
   }
 
-  .navItems{
+  .navItems {
     margin-top: 0rem;
-    }
+    float: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .topnav.responsive {position: relative;}
-    .topnav.responsive .icon {
-      position: absolute;
-      right: 0;
-      top: 0;
-      background-color: #ccd5ae;
-    }
-    .topnav.responsive a {
-      float: none;
-      display: block;
-      text-align: left;
-    }
+  
+
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #ccd5ae;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 }

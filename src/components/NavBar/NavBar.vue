@@ -7,17 +7,17 @@
     </router-link>
 
     <div class="navItems">
-      <router-link to="/" class="nav-link"><strong>Home</strong></router-link>
-      <router-link to="/recipe-search" class="nav-link"><strong>Search Recipes</strong></router-link>
-      <router-link to="/recipe-cuisine/" class="nav-link"><strong>Cuisine</strong></router-link>
-       <router-link to="/my-recipes/" class="nav-link"><strong>My Recipes</strong></router-link>
-      <a href="javascript:void(0);" class="icon" @click="showMenu()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </a>
+      <router-link to="/"><strong>Home</strong></router-link>
+      <router-link to="/recipe-search"><strong>Search Recipes</strong></router-link>
+      <router-link to="/recipe-cuisine/"><strong>Cuisine</strong></router-link>
+      <router-link to="/my-recipes/"><strong>My Recipes</strong></router-link>
     </div>
 
+    <a href="javascript:void(0);" class="icon" @click="showMenu()">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </a>
   </div>
 </template>
 
