@@ -20,21 +20,23 @@
 		</div>
 		<div class="instructions" role="region" aria-labelledby="instructions-heading">
 			<h3 id="instructions-heading">Instructions</h3>
+			
 			<table class="table table-striped">
 				<caption>List of instructions for {{ recipe.title }}</caption>
 				<thead>
 					<tr>
-						<th scope="col">Step #</th>
-						<th scope="col">Instruction</th>
+						<th scope="col" id="step-header">Step #</th>
+						<th scope="col" id="instruction-header">Instruction</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr v-for="(step, i) in recipe.instructions" :key="i">
-						<th scope="row">{{ i + 1 }}</th>
-						<td><span v-html="sanitiseText(step)"></span></td>
+						<th scope="row" id="step{{ i+1 }}" headers="step-header">{{ i + 1 }}</th>
+						<td headers="instruction-header"><span v-html="sanitiseText(step)"></span></td>
 					</tr>
 				</tbody>
 			</table>
+
 		</div>
 	</div>
 </template>
