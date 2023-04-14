@@ -7,7 +7,7 @@
         <div class="search-box">
           <label for="search_form">Search: </label>
           <input type="text" class="form-control rounded-pill " placeholder="Pizza, Soup, etc." id="search_form"
-            v-model="searchQuery" />
+            v-model="searchQuery" aria-label="Search for recipes"  />
           <button type="submit" class="btn btn-primary rounded-pill " @click="searchRecipes">
             Submit
           </button>

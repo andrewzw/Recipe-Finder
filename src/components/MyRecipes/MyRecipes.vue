@@ -2,7 +2,7 @@
   <div id="my_recipe" class="container">
     <h2>My Recipes</h2>
     <p>Make and upload your own recipes</p>
-    <button class="addButton" @click="togglePopup">
+    <button class="addButton" @click="togglePopup" aria-label="Add new recipe">
       <em class="gg-add addIcon"></em>
       <span>Add new Recipe</span>
     </button>
@@ -31,7 +31,7 @@
         <form @submit.prevent="addNewRecipe"> <!-- prevent submit if form is not filled-->
           <div class="group">
             <label for="title"><strong>Title</strong></label>
-            <input type="text" v-model="newRecipe.title" id="title"/>
+            <input type="text" v-model="newRecipe.title" id="title" required />
           </div>
 
           <div class="group">
@@ -42,13 +42,13 @@
 
           <div class="group">
             <label for="image_link"><strong>Recipe Image Link</strong></label>
-            <input type="text" v-model="newRecipe.image" id="image_link"/>
+            <input type="text" v-model="newRecipe.image" id="image_link" />
           </div>
 
           <div class="group">
             <label for="ingredients"><strong>Ingredients</strong></label>
             <div class="ingredient" v-for="i in newRecipe.ingredientRows" :key="i">
-              <input type="text" v-model="newRecipe.ingredients[i - 1]" id="ingredients"/>
+              <input type="text" v-model="newRecipe.ingredients[i - 1]" id="ingredients" />
             </div>
 
             <button type="button" class="addButton" @click="addNewIngredient">

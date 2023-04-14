@@ -10,6 +10,8 @@
         </div>
       </i>
 
+
+      
       <div class="nav-content container-fluid" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
 
         <div class="logo ">
@@ -19,17 +21,17 @@
           </router-link>
         </div>
 
-        <ul class="nav-items">
-          <li class="nav-item">
+        <ul class="nav-items" role="menu">
+          <li class="nav-item" role="menuitem">
             <router-link to="/" class="nav-link"><strong>Home</strong></router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" role="menuitem">
             <router-link to="/recipe-search" class="nav-link"><strong>Search Recipes</strong></router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" role="menuitem">
             <router-link to="/recipe-cuisine/" class="nav-link"><strong>Cuisine</strong></router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" role="menuitem">
             <router-link to="/my-recipes/" class="nav-link"><strong>My Recipes</strong></router-link>
           </li>
         </ul>

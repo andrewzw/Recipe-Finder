@@ -1,20 +1,24 @@
 <template>
 	<div class="view_recipe">
-		<router-link to="/my-recipes"><em class="gg-arrow-left-o mb-3"></em></router-link> <!-- back to my recipes -->
+		<!-- back to my recipes -->
+		<router-link to="/my-recipes" aria-label="Back to my recipes" class="btn rounded-pill border border-dark custom-btn" style="border-color: black;">
+			<em class="gg-arrow-left-o"></em>
+		</router-link>
+
 
 		<h2>{{ recipe.title }} </h2>
 		<p class="desc">{{ recipe.description }}</p>
 		<hr />
-		<div class="ingredients">
-			<h3>Ingredients</h3>
+		<div class="ingredients" role="region" aria-labelledby="ingredients-heading">
+			<h3 id="ingredients-heading">Ingredients</h3>
 			<ul>
 				<li v-for="(ingredient, i) in recipe.ingredients" :key="i">
 					{{ ingredient }}
 				</li>
 			</ul>
 		</div>
-		<div class="instructions">
-			<h3>Instructions</h3>
+		<div class="instructions" role="region" aria-labelledby="instructions-heading">
+			<h3 id="instructions-heading">Instructions</h3>
 			<table class="table table-striped">
 				<tbody>
 					<tr v-for="(step, i) in recipe.instructions" :key="i">
