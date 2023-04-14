@@ -7,7 +7,7 @@
         <div class="search-box">
           <label for="search_form">Search: </label>
           <input type="text" class="form-control rounded-pill " placeholder="Pizza, Soup, etc." id="search_form"
-            v-model="searchQuery" aria-label="Search for recipes"  />
+            v-model="searchQuery" aria-label="Search for recipes" />
           <button type="submit" class="btn btn-primary rounded-pill " @click="searchRecipes">
             Submit
           </button>
@@ -25,9 +25,8 @@
           <div class="card-body">
             <h2 class="card-title">{{ recipe.title }}</h2>
 
-            <div class="d-flex justify-content-center"> 
-              <button class="btn btn-outline-primary"
-                @click="toggleIngredients(recipe)">
+            <div class="d-flex justify-content-center">
+              <button class="btn btn-outline-primary" @click="toggleIngredients(recipe)">
                 View Ingredients
               </button>
               <button class="btn btn-outline-danger" @click="toggleSteps(recipe)">

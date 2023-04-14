@@ -1,7 +1,8 @@
 <template>
   <div id="recipe-cuisine" class="container">
     <div class="row ">
-      <h1 class="text-center ">{{ selectedCuisine ? 'Top 3 ' + selectedCuisine.name + ' Dishes' : "Mama's Cuisine Recipes" }}</h1>
+      <h1 class="text-center ">{{ selectedCuisine ? 'Top 3 ' + selectedCuisine.name + ' Dishes' : "Mama's Cuisine Recipes"
+}}</h1>
 
       <p class="text-center">{{ !selectedCuisine ? 'Click on a cuisine to see the top 3 recipes' : `Here are the top 3
               recipes of the ${selectedCuisine.name} cuisine!` }}</p>

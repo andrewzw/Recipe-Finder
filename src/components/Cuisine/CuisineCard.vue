@@ -2,7 +2,7 @@
   <div v-if="cuisine" class="card-container" @click="$emit('card-clicked', cuisine)" role="button">
 
     <div class="imgbox">
-      <img :src="cuisine.image" class="card-img-top" :alt="cuisine.name" />
+      <img :src="cuisine.image" class="card-img-top" alt="Cuisine Name" />
       <div class="card-img-overlay d-flex align-items-center justify-content-center">
         <div>
           <h3 class="card-title text-white text-center">{{ cuisine.name }}</h3>

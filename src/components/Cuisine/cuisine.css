@@ -40,13 +40,13 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-#recipe-cuisine{
+#recipe-cuisine {
   padding-top: 80px;
   min-height: calc(100vh);
 }
 
 @media screen and (max-width: 767px) {
-  #recipe-cuisine{
+  #recipe-cuisine {
     margin-top: 0;
     padding-top: 0;
   }
@@ -68,8 +68,6 @@
   }
 }
 
-
-
 /* TopRecipes css */
 @import url("https://unpkg.com/css.gg@2.0.0/icons/css/arrow-left-o.css");
 .custom-btn {
@@ -85,7 +83,7 @@
   border: 0;
   border-radius: 15px;
   color: #fcf7e3;
-  background-color: #00000081;
+  background-color: #0000008f;
   box-shadow: 6px 7px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -93,6 +91,10 @@
   border-radius: 15px 15px 0 0;
 }
 
-.cuisine-card h5 {
+.cuisine-card h2 {
+  color: #ffffff;
+}
+
+.cuisine-card p {
   color: #ffffff;
 }

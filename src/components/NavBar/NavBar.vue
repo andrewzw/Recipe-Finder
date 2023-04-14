@@ -11,13 +11,13 @@
       </i>
 
 
-      
+
       <div class="nav-content container-fluid" :class="this.showMobileMenu ? 'open-menu' : 'closed-menu'">
 
         <div class="logo ">
           <router-link to="/" class="navbar-brand d-flex align-items-center">
             <img :src="logo" alt="Logo" class="logo d-none d-lg-inline" />
-            <h1><i class="fas fa-utensils"></i> Mama's Recipe</h1>
+            <h1><em class="fas fa-utensils"></em> Mama's Recipe</h1>
           </router-link>
         </div>
 

@@ -3,7 +3,7 @@
     <div v-if="selectedCuisine">
 
       <router-link class="btn mt-3 rounded-pill border border-dark custom-btn" style="border-color: black;"
-        @click="goBack" :to="{ path: '/recipe-cuisine/' }" aria-label="Back to my cuisine page" >
+        @click="goBack" :to="{ path: '/recipe-cuisine/' }" aria-label="Back to my cuisine page">
         <em class="gg-arrow-left-o"></em>
       </router-link>
 
@@ -12,11 +12,11 @@
         <div v-for="dish in filteredDishes" :key="dish.id" class="col">
           <div class="card h-100 cuisine-card">
 
-            <img :src="dish.image" :alt="dish.name" class="card-img-top" style="height: 400px; object-fit: cover;">
+            <img :src="dish.image" alt="Dish" class="card-img-top" style="height: 400px; object-fit: cover;">
 
             <div class="card-body">
 
-              <h5 class="card-title">{{ dish.name }}</h5>
+              <h2 class="card-title">{{ dish.name }}</h2>
               <p class="card-text">{{ dish.desc }}</p>
               <p class="card-text"><strong>Ingredients: </strong><br>{{ dish.ingredients }}</p>
               <p class="card-text"><strong>Instructions: </strong><br>{{ dish.instructions }}</p>

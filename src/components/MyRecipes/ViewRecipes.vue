@@ -1,7 +1,8 @@
 <template>
 	<div class="view_recipe">
 		<!-- back to my recipes -->
-		<router-link to="/my-recipes" aria-label="Back to my recipes page" class="btn rounded-pill border border-dark custom-btn" style="border-color: black;">
+		<router-link to="/my-recipes" aria-label="Back to my recipes page"
+			class="btn rounded-pill border border-dark custom-btn" style="border-color: black;">
 			<em class="gg-arrow-left-o"></em>
 		</router-link>
 
