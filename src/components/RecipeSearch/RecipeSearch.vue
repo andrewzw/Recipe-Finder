@@ -1,15 +1,15 @@
-
 <template>
   <div id="recipe-search" class="container-fluid">
-    <h2 class="text-center ">Search Recipes</h2>
+    <h1 class="text-center ">Search Recipes</h1>
     <p>You can start off by searching the recipe that you want</p>
     <div class="mb-4 row justify-content-center">
       <div class="col-lg-6 col-md-8 col-sm-10">
         <div class="search-box">
-          <input type="text" class="form-control rounded-pill " placeholder="Search for recipes: Pizza, Soup, etc."
+          <label for="search_form">Search: </label>
+          <input type="text" class="form-control rounded-pill " placeholder="Pizza, Soup, etc." id="search_form"
             v-model="searchQuery" />
           <button type="submit" class="btn btn-primary rounded-pill " @click="searchRecipes">
-            Search
+            Submit
           </button>
 
         </div>
@@ -23,21 +23,20 @@
         <div class="card pb-0">
           <img :src="recipe.image" class="card-img-top" alt="Recipe image" />
           <div class="card-body">
-            <h5 class="card-title">{{ recipe.title }}</h5>
+            <h2 class="card-title">{{ recipe.title }}</h2>
 
             <div class="d-flex justify-content-center"> 
-              <button class="btn btn-outline-primary mr-2"
+              <button class="btn btn-outline-primary"
                 @click="toggleIngredients(recipe)">
                 View Ingredients
               </button>
               <button class="btn btn-outline-danger" @click="toggleSteps(recipe)">
                 View Steps
               </button>
-
             </div>
 
             <div v-if="recipe.showIngredients">
-              <h6>Ingredients:</h6>
+              <h3>Ingredients:</h3>
               <ul>
                 <li v-for="ingredient in recipe.ingredients" :key="ingredient.id">{{ ingredient.name }}</li>
               </ul>
@@ -45,7 +44,7 @@
 
 
             <div v-if="recipe.showSteps">
-              <h6>Steps:</h6>
+              <h3>Steps:</h3>
               <ol>
                 <li v-for="(step, index) in recipe.steps" :key="index">{{ step.step }}</li>
               </ol>

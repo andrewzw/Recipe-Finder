@@ -1,6 +1,6 @@
 <template>
 	<div class="view_recipe">
-		<router-link to="/my-recipes"><i class="gg-arrow-left-o mb-3"></i></router-link> <!-- back to my recipes -->
+		<router-link to="/my-recipes"><em class="gg-arrow-left-o mb-3"></em></router-link> <!-- back to my recipes -->
 
 		<h2>{{ recipe.title }} </h2>
 		<p class="desc">{{ recipe.description }}</p>

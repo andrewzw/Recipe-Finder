@@ -3,7 +3,7 @@
     <h2>My Recipes</h2>
     <p>Make and upload your own recipes</p>
     <button class="addButton" @click="togglePopup">
-      <i class="gg-add addIcon"></i>
+      <em class="gg-add addIcon"></em>
       <span>Add new Recipe</span>
     </button>
 
@@ -30,42 +30,42 @@
         <h2>Add new recipe</h2>
         <form @submit.prevent="addNewRecipe"> <!-- prevent submit if form is not filled-->
           <div class="group">
-            <label><b>Title</b></label>
-            <input type="text" v-model="newRecipe.title" />
+            <label for="title"><strong>Title</strong></label>
+            <input type="text" v-model="newRecipe.title" id="title"/>
           </div>
 
           <div class="group">
-            <label><b>Description</b></label>
-            <textarea v-model="newRecipe.description"></textarea>
+            <label for="description"><strong>Description</strong></label>
+            <textarea v-model="newRecipe.description" id="description"></textarea>
           </div>
 
 
           <div class="group">
-            <label><b>Recipe Image Link</b></label>
-            <input type="text" v-model="newRecipe.image" />
+            <label for="image_link"><strong>Recipe Image Link</strong></label>
+            <input type="text" v-model="newRecipe.image" id="image_link"/>
           </div>
 
           <div class="group">
-            <label><b>Ingredients</b></label>
+            <label for="ingredients"><strong>Ingredients</strong></label>
             <div class="ingredient" v-for="i in newRecipe.ingredientRows" :key="i">
-              <input type="text" v-model="newRecipe.ingredients[i - 1]" />
+              <input type="text" v-model="newRecipe.ingredients[i - 1]" id="ingredients"/>
             </div>
 
             <button type="button" class="addButton" @click="addNewIngredient">
-              <i class="gg-add addIcon"></i>
+              <em class="gg-add addIcon"></em>
               <span>Add Ingredient</span>
             </button>
 
           </div>
 
           <div class="group">
-            <label><b>Instructions</b></label>
+            <label for="instructions"><strong>Instructions</strong></label>
             <div class="instructions" v-for="i in newRecipe.instructionsRows" :key="i">
-              <textarea v-model="newRecipe.instructions[i - 1]"></textarea>
+              <textarea v-model="newRecipe.instructions[i - 1]" id="instructions"></textarea>
             </div>
 
             <button type="button" class="addButton" @click="addNewStep">
-              <i class="gg-add addIcon"></i>
+              <em class="gg-add addIcon"></em>
               <span>Add step</span>
             </button>
           </div>
@@ -73,12 +73,12 @@
 
           <div class="d-flex justify-content-center">
             <button class="btn btn-primary" type="submit">
-              <i class="gg-play-list-add"></i>
+              <em class="gg-play-list-add"></em>
               <span class="ms-3">Add Recipe</span>
             </button>
 
             <button class="btn btn-secondary" type="button" @click="togglePopup">
-              <i class="gg-close"></i>
+              <em class="gg-close"></em>
               <span class="ms-2">Close</span>
             </button>
 

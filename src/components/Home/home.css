@@ -21,6 +21,10 @@
   color: #ffffff;
 }
 
+.card-body h2{
+  font-size: 25px;
+}
+
 .card-text {
   text-align: center;
   color: #f5f5f5;

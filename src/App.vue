@@ -35,9 +35,6 @@ export default {
 
 }
 
-h1{
-  font-family: "Lato", sans-serif;
-}
 
 p {
   font-family: "Lato", sans-serif;
