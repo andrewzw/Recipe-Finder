@@ -1,7 +1,7 @@
 
 <template>
   <div id="recipe-search" class="container-fluid">
-    <h2 class="text-center ">Recipe Finder</h2>
+    <h2 class="text-center ">Search Recipes</h2>
     <p>You can start off by searching the recipe that you want</p>
     <div class="mb-4 row justify-content-center">
       <div class="col-lg-6 col-md-8 col-sm-10">
@@ -36,7 +36,6 @@
 
             </div>
 
-
             <div v-if="recipe.showIngredients">
               <h6>Ingredients:</h6>
               <ul>
@@ -51,8 +50,6 @@
                 <li v-for="(step, index) in recipe.steps" :key="index">{{ step.step }}</li>
               </ol>
             </div>
-
-
 
           </div>
         </div>

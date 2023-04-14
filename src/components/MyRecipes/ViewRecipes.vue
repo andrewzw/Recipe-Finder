@@ -31,7 +31,7 @@
 import { useStore } from 'vuex';
 
 export default {
-	name: 'AddRecipes',
+	name: 'ViewRecipes',
 	computed: {
 		recipe() {
 			const store = useStore();
