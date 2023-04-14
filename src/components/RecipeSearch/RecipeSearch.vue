@@ -85,8 +85,10 @@ export default {
       if (!this.searchQuery.trim()) {
         return;
       }
+      
+      const apiKey = '389e8fc522064c60b4b1a938f040e4c0';
       //const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
-      const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
+      //const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${this.searchQuery}&number=20`;
 
 
@@ -104,8 +106,10 @@ export default {
 
     // Get ingredients for a recipe
     async getIngredients(id) {
+      
+      const apiKey = '389e8fc522064c60b4b1a938f040e4c0';
       //const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
-      const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
+      //const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`;
 
       try {
