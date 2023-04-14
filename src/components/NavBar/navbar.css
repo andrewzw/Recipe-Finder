@@ -24,7 +24,6 @@
 .navbar-brand.router-link-exact-active h1 {
   text-shadow: none;
   color: rgb(0, 0, 0);
-
 }
 
 .router-link-exact-active:not(.navbar-brand) {
@@ -41,7 +40,6 @@
   background-color: #ccd5ae;
 }
 
-
 .topnav a {
   float: left;
   display: block;
@@ -52,7 +50,7 @@
   font-size: 17px;
 }
 
-.topnav h1{
+.topnav h1 {
   font-family: "Georgia", Times, serif !important;
 }
 
@@ -64,7 +62,6 @@
 .navItems {
   margin-top: 1rem;
   float: right;
-
 }
 
 .topnav .icon {
@@ -91,8 +88,6 @@
     flex-direction: column;
     align-items: center;
   }
-
-  
 
   .topnav.responsive {
     position: relative;

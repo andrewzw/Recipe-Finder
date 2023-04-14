@@ -4,7 +4,7 @@
 @import url("https://unpkg.com/css.gg@2.0.0/icons/css/play-list-add.css");
 @import url("https://unpkg.com/css.gg@2.0.0/icons/css/close.css");
 
-.recipeImage{
+.recipeImage {
   object-fit: cover;
   border-radius: 5px;
 }
@@ -215,13 +215,11 @@
   min-height: calc(100vh);
 }
 
-
 @media screen and (max-width: 767px) {
   #myRecipe {
     margin-top: 2rem;
     padding-top: 2rem;
   }
-
 }
 
 @media (max-width: 768px) {

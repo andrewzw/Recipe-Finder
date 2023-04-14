@@ -61,7 +61,6 @@ h3 {
   flex-direction: row;
 }
 
-
 .search-box input {
   background-color: #fff6e4;
   border: none;
@@ -69,7 +68,7 @@ h3 {
   outline: none;
   width: 100%;
   box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.3);
-  max-width: 450px; 
+  max-width: 450px;
 }
 
 .search-box button {

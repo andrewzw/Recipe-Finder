@@ -13,7 +13,7 @@
       <router-link to="/my-recipes/"><strong>My Recipes</strong></router-link>
     </div>
 
-    <a href="javascript:void(0);" class="icon" @click="showMenu()">
+    <a href="javascript:void(0);" class="icon" title="Menu icon" @click="showMenu()">
       <div class="bar1"></div>
       <div class="bar2"></div>
       <div class="bar3"></div>
