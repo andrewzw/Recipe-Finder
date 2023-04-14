@@ -3,7 +3,7 @@
     <div v-if="selectedCuisine">
 
       <router-link class="btn mt-3 rounded-pill border border-dark custom-btn" style="border-color: black;"
-        @click="goBack" :to="{ path: '/recipe-cuisine/' }">
+        @click="goBack" :to="{ path: '/recipe-cuisine/' }" aria-label="Back to my cuisine page" >
         <em class="gg-arrow-left-o"></em>
       </router-link>
 

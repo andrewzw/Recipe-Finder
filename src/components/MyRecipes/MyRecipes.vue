@@ -1,6 +1,6 @@
 <template>
   <div id="my_recipe" class="container">
-    <h2>My Recipes</h2>
+    <h1>My Recipes</h1>
     <p>Make and upload your own recipes</p>
     <button class="addButton" @click="togglePopup" aria-label="Add new recipe">
       <em class="gg-add addIcon"></em>

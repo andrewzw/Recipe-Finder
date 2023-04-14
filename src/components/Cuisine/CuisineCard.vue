@@ -1,5 +1,6 @@
 <template>
-  <div v-if="cuisine" class="card-container" @click="$emit('card-clicked', cuisine)">
+  <div v-if="cuisine" class="card-container" @click="$emit('card-clicked', cuisine)" role="button">
+
     <div class="imgbox">
       <img :src="cuisine.image" class="card-img-top" :alt="cuisine.name" />
       <div class="card-img-overlay d-flex align-items-center justify-content-center">
