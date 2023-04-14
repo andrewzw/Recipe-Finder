@@ -24,7 +24,7 @@
 .navbar-brand.router-link-exact-active h1 {
   text-shadow: none;
   color: rgb(0, 0, 0);
-  font-family: "Georgia", Times, serif;
+
 }
 
 .router-link-exact-active:not(.navbar-brand) {
@@ -50,6 +50,10 @@
   padding: 0px 16px;
   text-decoration: none;
   font-size: 17px;
+}
+
+.topnav h1{
+  font-family: "Georgia", Times, serif !important;
 }
 
 .topnav a:hover {
