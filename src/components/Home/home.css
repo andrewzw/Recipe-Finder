@@ -113,7 +113,7 @@
 
 @media (max-width: 768px) {
   #carouselImg .carousel-item img {
-    margin-top: 0;
+    margin-top: 2rem;
     height: 40vh;
   }
 
@@ -126,6 +126,7 @@
   }
 
   .floatingText img {
+    margin-top: 6rem;
     width: 50%;
     max-width: 400px;
     margin-bottom: 1%;
