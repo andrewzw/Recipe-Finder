@@ -21,6 +21,13 @@
 		<div class="instructions" role="region" aria-labelledby="instructions-heading">
 			<h3 id="instructions-heading">Instructions</h3>
 			<table class="table table-striped">
+				<caption>List of instructions for {{ recipe.title }}</caption>
+				<thead>
+					<tr>
+						<th scope="col">Step #</th>
+						<th scope="col">Instruction</th>
+					</tr>
+				</thead>
 				<tbody>
 					<tr v-for="(step, i) in recipe.instructions" :key="i">
 						<th scope="row">{{ i + 1 }}</th>

@@ -51,7 +51,7 @@
               <input type="text" v-model="newRecipe.ingredients[i - 1]" id="ingredients" />
             </div>
 
-            <button type="button" class="addButton" @click="addNewIngredient">
+            <button type="button" class="addButton" @click="addNewIngredient" title="Add Ingredient">
               <em class="gg-add addIcon"></em>
               <span>Add Ingredient</span>
             </button>
@@ -64,7 +64,7 @@
               <textarea v-model="newRecipe.instructions[i - 1]" id="instructions"></textarea>
             </div>
 
-            <button type="button" class="addButton" @click="addNewStep">
+            <button type="button" class="addButton" @click="addNewStep" title="Add Step">
               <em class="gg-add addIcon"></em>
               <span>Add step</span>
             </button>
@@ -72,12 +72,12 @@
 
 
           <div class="d-flex justify-content-center">
-            <button class="btn btn-primary" type="submit">
+            <button class="btn btn-primary" type="submit" title="Add recipe">
               <em class="gg-play-list-add"></em>
               <span class="ms-3">Add Recipe</span>
             </button>
 
-            <button class="btn btn-secondary" type="button" @click="togglePopup">
+            <button class="btn btn-secondary" type="button" @click="togglePopup" title="Close popup">
               <em class="gg-close"></em>
               <span class="ms-2">Close</span>
             </button>
