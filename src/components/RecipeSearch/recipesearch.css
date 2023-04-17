@@ -87,6 +87,17 @@ h3 {
   padding-top: 80px;
 }
 
+.steps ol {
+  color: black;
+}
+
+.steps hr {
+  color: rgb(252, 252, 252);
+  height: 2px;
+  background-color: white;
+  box-shadow: 0 0 1px white;
+}
+
 @media screen and (max-width: 767px) {
   #recipe-search {
     margin-top: 2rem;

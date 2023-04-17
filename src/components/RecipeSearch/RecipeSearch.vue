@@ -18,8 +18,8 @@
 
     <!-- Displays recipe -->
     <div class="row justify-content-center mb-5">
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4 " v-for="recipe in recipes" :key="recipe.id">
-
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4 "
+        v-for="recipe in paginatedItems(recipes, currentCardPage, cardsPerPage)" :key="recipe.id">
         <div class="card pb-0">
           <img :src="recipe.image" class="card-img-top" alt="Recipe image" />
           <div class="card-body">
@@ -51,7 +51,8 @@
                 <tbody>
 
                   <!-- Loops paginatedIngredients array, derived from full ingredients list -->
-                  <tr v-for="(ingredient, index) in paginatedIngredients(recipe)" :key="ingredient.id">
+                  <tr v-for="(ingredient, index) in paginatedItems(recipe.ingredients, recipe.currentPage, rowsPerPage)"
+                    :key="ingredient.id">
 
                     <!-- Calculate and display ingredient number based on the currentPage and rowsPerPage -->
                     <td headers="ingredient-num">{{ (recipe.currentPage - 1) * rowsPerPage + index + 1 }}</td>
@@ -60,11 +61,11 @@
                 </tbody>
               </table>
 
-              <!-- Pagination -->
+              <!-- View Ingredients Pagination -->
               <nav aria-label="Page navigation">
                 <ul class="pagination">
-                  <li class="page-item" v-for="n in totalPages(recipe)" :key="`recipe-${recipe.id}-page-${n}`"
-                    :class="{ 'active': n === recipe.currentPage }">
+                  <li class="page-item" v-for="n in totalPages(recipe.ingredients, rowsPerPage)"
+                    :key="`recipe-${recipe.id}-page-${n}`" :class="{ 'active': n === recipe.currentPage }">
                     <a class="page-link" href="#" @click.prevent="setCurrentPage(n, recipe)">{{ n }}</a>
                   </li>
                 </ul>
@@ -73,17 +74,34 @@
 
 
             <!-- Prints steps -->
-            <div v-if="recipe.showSteps">
+            <div v-if="recipe.showSteps" class="mt-3 steps">
               <h3>Steps:</h3>
               <ol>
-                <li v-for="(step, index) in recipe.steps" :key="index">{{ step.step }}</li>
+                <li v-for="(step, index) in recipe.steps" :key="index">{{ step.step }}
+                  <hr>
+                </li>
+
               </ol>
             </div>
 
           </div>
         </div>
+
+
       </div>
+      <!-- Recipe Cards Pagination -->
+      <nav aria-label="Recipe card page navigation">
+        <ul class="pagination justify-content-center">
+          <li class="page-item" v-for="n in totalPages(recipes, cardsPerPage)" :key="`recipe-card-page-${n}`"
+            :class="{ 'active': n === currentCardPage }">
+            <a class="page-link" href="#" @click.prevent="setCurrentPage(n, 'recipe-cards')">{{ n }}</a>
+          </li>
+        </ul>
+      </nav>
     </div>
+
+
+
   </div>
 </template>
 
@@ -99,25 +117,33 @@ export default {
       showDetails: false,
       showIngredients: false,
       showSteps: false,
-      rowsPerPage: 5 // Pagination
+      rowsPerPage: 5, // Pagination for ingredients
+      cardsPerPage: 8, // Pagination for recipe cards
+      currentCardPage: 1, // Current page for recipe cards
     };
   },
   methods: {
-    //Sets the currentPage property for the given recipe.
-    setCurrentPage(pageNumber, recipe) {
-      recipe.currentPage = pageNumber;
+    // Sets the current page for the given context (recipe or recipe cards)
+    setCurrentPage(pageNumber, context) {
+      if (context === 'recipe-cards') {
+        this.currentCardPage = pageNumber;
+      } else {
+        context.currentPage = pageNumber;
+      }
     },
 
-    //Calculates the total number of pages required to display all ingredients
-    totalPages(recipe) {
-      return Math.ceil(recipe.ingredients.length / this.rowsPerPage);
+    // Calculates the total number of pages required to display all items
+    totalPages(items, itemsPerPage) {
+      return Math.ceil(items.length / itemsPerPage);
     },
-    //Returns a slice of the recipe's ingredients array for the
-    paginatedIngredients(recipe) {
-      const start = (recipe.currentPage - 1) * this.rowsPerPage;
-      const end = start + this.rowsPerPage;
-      return recipe.ingredients.slice(start, end);
+
+    // Returns a slice of the items array for the current page
+    paginatedItems(items, currentPage, itemsPerPage) {
+      const start = (currentPage - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      return items.slice(start, end);
     },
+
 
     // Search for recipes using the search query
     async searchRecipes() {
@@ -125,9 +151,9 @@ export default {
         return;
       }
 
-      //const apiKey = '389e8fc522064c60b4b1a938f040e4c0';
+      const apiKey = '389e8fc522064c60b4b1a938f040e4c0';
       //const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
-      const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
+      //const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${this.searchQuery}&number=20`;
 
 
@@ -147,9 +173,9 @@ export default {
     // Get ingredients for a recipe
     async getIngredients(id) {
 
-      //const apiKey = '389e8fc522064c60b4b1a938f040e4c0';
+      const apiKey = '389e8fc522064c60b4b1a938f040e4c0';
       //const apiKey = 'a7b2f5842fb342eba158bc308e3cac8f';
-      const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
+      //const apiKey = 'df35115937e9449ba6c9f2fc60eaeb6f';
       const apiUrl = `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`;
 
       try {
