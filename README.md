@@ -1,4 +1,5 @@
-# recipe-finder
+# Recipe Finder
+Hosted on Netlify: https://mama-recipe-yapzhewei.netlify.app/
 
 ## Project setup
 ```
