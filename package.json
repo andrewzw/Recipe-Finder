@@ -12,6 +12,7 @@
     "axios": "^1.7.3",
     "bootstrap": "^5.3.0-alpha3",
     "core-js": "^3.8.3",
+    "dotenv": "^16.4.5",
     "gitart-scroll-carousel": "^1.2.4",
     "jquery": "^3.6.4",
     "node": "^22.6.0",
